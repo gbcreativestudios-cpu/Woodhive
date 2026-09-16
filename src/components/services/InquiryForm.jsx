@@ -36,7 +36,7 @@ export default function InquiryForm({ name, withUpload = false }) {
 
   if (status === "done") {
     return (
-      <div className="rounded-3xl border border-sand-100 bg-cream-50 p-8 text-center">
+      <div className="rounded-lg border border-sand-100 bg-cream-50 p-8 text-center">
         <div className="mx-auto mb-3.5 grid h-11 w-11 place-items-center rounded-full bg-orange-500">
           <Check className="h-5 w-5 text-cream-50" />
         </div>
@@ -56,7 +56,7 @@ export default function InquiryForm({ name, withUpload = false }) {
       data-netlify-honeypot="bot-field"
       encType={withUpload ? "multipart/form-data" : undefined}
       onSubmit={handleSubmit}
-      className="rounded-3xl border border-sand-100 bg-cream-50 p-6 sm:p-7"
+      className="rounded-lg border border-sand-100 bg-cream-50 p-6 sm:p-7"
     >
       <input type="hidden" name="form-name" value={name} />
       <p className="hidden">
@@ -85,7 +85,7 @@ export default function InquiryForm({ name, withUpload = false }) {
           name="message"
           rows={4}
           required
-          className="w-full rounded-xl border border-sand-100 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+          className="w-full rounded-lg border border-sand-100 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
         />
       </div>
 
@@ -94,7 +94,7 @@ export default function InquiryForm({ name, withUpload = false }) {
           <label className="mb-1.5 block text-[12.5px] font-semibold text-brown-900">
             Reference photos (optional)
           </label>
-          <label className="flex cursor-pointer items-center gap-2.5 rounded-xl border-[1.5px] border-dashed border-sand-100 px-4 py-4 text-[#8a7358] transition-colors hover:border-orange-500">
+          <label className="flex cursor-pointer items-center gap-2.5 rounded-lg border-[1.5px] border-dashed border-sand-100 px-4 py-4 text-[#8a7358] transition-colors hover:border-orange-500">
             <Upload className="h-4 w-4 shrink-0" />
             <span className="text-[13px]">Attach photos of the space</span>
             <input type="file" name="photos" multiple accept="image/*" className="sr-only" />
@@ -127,7 +127,7 @@ function Field({ label, name, type = "text", required }) {
         type={type}
         name={name}
         required={required}
-        className="h-11 w-full rounded-[10px] border border-sand-100 bg-white px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+        className="h-11 w-full rounded-lg border border-sand-100 bg-white px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
       />
     </div>
   );

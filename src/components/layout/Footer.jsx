@@ -1,7 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import Reveal from "../ui/Reveal";
 import { LogoMark } from "../ui/Logo";
+import { SERVICES } from "../../data/services";
 
 /* Brand marks aren't in lucide's icon set, so they're drawn here to match its weight. */
 function InstagramIcon({ className = "h-[18px] w-[18px]" }) {
@@ -30,15 +31,6 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
-  const navigate = useNavigate();
-
-  const goToService = (hash) => {
-    navigate("/services");
-    setTimeout(() => {
-      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 80);
-  };
-
   return (
     <footer className="bg-brown-950">
       <Reveal className="mx-auto max-w-[1040px] px-6 py-14">
@@ -61,9 +53,13 @@ export default function Footer() {
           <div>
             <h4 className="mb-3.5 text-[13.5px] font-bold text-cream-50">Products &amp; Services</h4>
             <ul className="flex flex-col gap-2 text-[13.5px] text-cream-50/60">
-              <li><button onClick={() => goToService("renovation")} className="text-left transition-colors hover:text-orange-400">Renovation &amp; Maintenance</button></li>
-              <li><button onClick={() => goToService("products")} className="text-left transition-colors hover:text-orange-400">Wooden Products</button></li>
-              <li><button onClick={() => goToService("rentals")} className="text-left transition-colors hover:text-orange-400">Rentals</button></li>
+              {SERVICES.map((s) => (
+                <li key={s.slug}>
+                  <Link to={`/services/${s.slug}`} className="transition-colors hover:text-orange-400">
+                    {s.navLabel}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

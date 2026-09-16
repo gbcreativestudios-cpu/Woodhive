@@ -15,6 +15,7 @@ const VARIANTS = {
 export default function Button({
   to,
   href,
+  onClick,
   children,
   variant = "gold",
   uppercase = false,
@@ -37,10 +38,18 @@ export default function Button({
       </Link>
     );
   }
+  if (href) {
+    return (
+      <a href={href} className={classes} {...props}>
+        {children}
+      </a>
+    );
+  }
+  // Neither `to` nor `href` — behaves as an action button (e.g. opens a modal).
   return (
-    <a href={href} className={classes} {...props}>
+    <button type="button" onClick={onClick} className={classes} {...props}>
       {children}
-    </a>
+    </button>
   );
 }
 

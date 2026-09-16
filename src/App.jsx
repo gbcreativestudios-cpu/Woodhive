@@ -2,9 +2,10 @@ import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Footer from "./components/layout/Footer";
+import { InquiryModalProvider } from "./context/InquiryModalContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Services from "./pages/Services";
+import ServiceDetail from "./pages/ServiceDetail";
 import Gallery from "./pages/Gallery";
 import FAQ from "./pages/FAQ";
 
@@ -31,7 +32,9 @@ function AnimatedRoutes() {
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
+          {/* No standalone /services page — each service has its own
+              portfolio + inquiry page instead. */}
+          <Route path="/services/:slug" element={<ServiceDetail />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="*" element={<Home />} />
@@ -45,8 +48,10 @@ function AnimatedRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <AnimatedRoutes />
+      <InquiryModalProvider>
+        <ScrollToTop />
+        <AnimatedRoutes />
+      </InquiryModalProvider>
     </BrowserRouter>
   );
 }

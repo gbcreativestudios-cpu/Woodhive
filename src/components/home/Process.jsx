@@ -47,7 +47,7 @@ function StackCard({ step, index, total }) {
     <div ref={cardRef} className="sticky" style={{ top: topOffset, zIndex: index + 1 }}>
       <motion.div
         style={{ scale, transformOrigin: "center top" }}
-        className="relative mb-5 overflow-hidden rounded-3xl bg-cream-50 px-7 py-8 shadow-[0_16px_40px_rgba(36,20,8,0.28)] sm:px-9 sm:py-10"
+        className="relative mb-5 overflow-hidden rounded-lg bg-cream-50 px-7 py-8 shadow-[0_16px_40px_rgba(36,20,8,0.28)] sm:px-9 sm:py-10"
       >
         <div className="flex items-baseline gap-4">
           <span className="font-display text-2xl text-orange-500">{step.n}</span>

@@ -30,7 +30,7 @@ export default function Values() {
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {VALUES.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.08}>
-              <img src={v.img} alt="" className="h-48 w-full rounded-[20px] object-cover" />
+              <img src={v.img} alt="" className="h-48 w-full rounded-lg object-cover" />
               <h3 className="mt-4 font-display text-[19px] text-brown-900">{v.title}</h3>
               <p className="mt-2 text-[13.5px] leading-relaxed text-[#5b4636]">{v.d}</p>
             </Reveal>

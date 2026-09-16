@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { IMG, OVERLAY } from "../../lib/images";
 import Button, { ButtonRow } from "../ui/Button";
 import Navbar from "../layout/Navbar";
+import { useInquiryModal } from "../../context/InquiryModalContext";
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.12, delayChildren: 0.25 } } };
 const item = {
@@ -10,6 +11,8 @@ const item = {
 };
 
 export default function Hero() {
+  const { openStartProject } = useInquiryModal();
+
   return (
     <section className="relative min-h-[88vh] overflow-hidden">
       <img src={IMG.homeHero} alt="" className="absolute inset-0 h-full w-full object-cover" />
@@ -42,7 +45,7 @@ export default function Hero() {
             <Button to="/gallery" variant="gold" uppercase>
               EXPLORE OUR WORK
             </Button>
-            <Button to="/services" variant="cream" uppercase>
+            <Button onClick={openStartProject} variant="cream" uppercase>
               START A PROJECT
             </Button>
           </ButtonRow>

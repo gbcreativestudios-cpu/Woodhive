@@ -18,7 +18,7 @@ export default function Team() {
       <div className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
         {TEAM.map((m, i) => (
           <Reveal key={m.name} variant="scale" delay={i * 0.06}>
-            <img src={m.img} alt={m.role} className="h-52 w-full rounded-[20px] object-cover" />
+            <img src={m.img} alt={m.role} className="h-52 w-full rounded-lg object-cover" />
             <h3 className="mt-3.5 font-display text-base text-brown-900">{m.name}</h3>
             <p className="mt-1 text-[12.5px] text-[#5b4636]">{m.role}</p>
           </Reveal>

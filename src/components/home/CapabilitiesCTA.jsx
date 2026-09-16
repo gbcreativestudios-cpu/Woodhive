@@ -1,7 +1,10 @@
 import Reveal from "../ui/Reveal";
 import Button from "../ui/Button";
+import { useInquiryModal } from "../../context/InquiryModalContext";
 
 export default function CapabilitiesCTA() {
+  const { openStartProject } = useInquiryModal();
+
   return (
     <section className="bg-sand-100 px-6 py-16 text-center">
       <Reveal variant="scale" className="mx-auto max-w-xl">
@@ -14,7 +17,7 @@ export default function CapabilitiesCTA() {
           what it needs and determine the right way to build it.
         </p>
         <div className="mt-6 flex justify-center">
-          <Button to="/services" variant="brown">
+          <Button onClick={openStartProject} variant="brown">
             Tell Us What You Need
           </Button>
         </div>

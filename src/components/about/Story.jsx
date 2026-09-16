@@ -8,7 +8,7 @@ export default function Story() {
         <img
           src={IMG.story}
           alt="The Wood Hive workshop"
-          className="h-72 w-full rounded-3xl object-cover sm:h-[460px]"
+          className="h-72 w-full rounded-lg object-cover sm:h-[460px]"
         />
       </Reveal>
       <Reveal variant="right">

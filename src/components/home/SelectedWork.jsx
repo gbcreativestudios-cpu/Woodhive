@@ -29,7 +29,7 @@ export default function SelectedWork() {
                 <img
                   src={w.img}
                   alt={w.title}
-                  className="h-56 w-full rounded-3xl object-cover transition-transform duration-500 group-hover:scale-[1.01] sm:h-72"
+                  className="h-56 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.01] sm:h-72"
                 />
                 <h3 className="mt-4 font-display text-lg text-brown-900">{w.title}</h3>
                 <p className="mt-1 text-xs font-bold tracking-wide text-orange-500">{w.category}</p>
