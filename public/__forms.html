@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head><title>Netlify form detection</title></head>
+  <body>
+    <!--
+      Netlify's build-time parser only sees static HTML, not React-rendered
+      markup. These stub forms exist solely so the three inquiry forms get
+      registered. Field names must match the real forms in the app.
+    -->
+    <form name="renovation-inquiry" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" hidden>
+      <input type="hidden" name="form-name" value="renovation-inquiry" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+      <input type="file" name="photos" />
+    </form>
+
+    <form name="products-inquiry" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="products-inquiry" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="rentals-inquiry" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="rentals-inquiry" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>
