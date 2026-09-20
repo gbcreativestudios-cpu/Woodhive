@@ -71,7 +71,7 @@ function StackCard({ step, index, total }) {
 
 export default function Process() {
   return (
-    <section className="bg-brown-900 py-16 lg:py-24">
+    <section className="bg-brown-950 py-16 lg:py-24">
       <div className="mx-auto max-w-[900px] px-6">
         <Reveal className="text-center">
           <p className="text-[13.5px] font-bold text-gold-400">Our Process</p>

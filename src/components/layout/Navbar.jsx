@@ -46,9 +46,9 @@ export default function Navbar() {
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-x-4 top-4 z-40 sm:inset-x-5 sm:top-5"
+      className="fixed inset-x-0 top-4 z-40 px-4 sm:top-5 sm:px-5"
     >
-      <div className="flex items-center justify-between border border-white/15 bg-[rgba(30,17,7,0.45)] px-4 py-3 backdrop-blur-lg sm:px-5">
+      <div className="mx-auto flex max-w-[1040px] items-center justify-between rounded-lg border border-white/15 bg-[rgba(30,17,7,0.45)] px-4 py-3 backdrop-blur-lg sm:px-5">
         <Link to="/" onClick={closeAll}>
           <Logo />
         </Link>
