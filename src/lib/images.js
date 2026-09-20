@@ -9,6 +9,16 @@
 export const SHOW_HERO_CAROUSEL_ON_MOBILE = true;
 
 /**
+ * Hero overlay color — an easy code-level control until this becomes a
+ * proper Decap color field once the site is fully converted to CMS. Set to
+ * match the footer's background (brown-950, #3D2209) as requested; change
+ * this one value (an "R, G, B" triplet, no "rgb()" wrapper) to retune the
+ * whole gradient in one place — every stop in OVERLAY.hero below reads
+ * from it.
+ */
+export const HERO_OVERLAY_COLOR = "61, 34, 9";
+
+/**
  * Central image map. Real photography drops in here — replace the URL for
  * any key and it updates everywhere that key is used.
  */
@@ -49,7 +59,7 @@ export const IMG = {
 
 /** Overlay gradients reused across photo-backed sections. */
 export const OVERLAY = {
-  hero: "linear-gradient(100deg, rgba(38,20,6,0.92) 0%, rgba(56,30,8,0.74) 38%, rgba(56,30,8,0.46) 68%, rgba(56,30,8,0.3) 100%), linear-gradient(0deg, rgba(26,14,5,0.68) 0%, rgba(26,14,5,0.15) 30%, rgba(26,14,5,0.15) 70%, rgba(26,14,5,0.62) 100%)",
+  hero: `linear-gradient(0deg, rgba(${HERO_OVERLAY_COLOR},0.9) 0%, rgba(${HERO_OVERLAY_COLOR},0.62) 35%, rgba(${HERO_OVERLAY_COLOR},0.32) 65%, rgba(${HERO_OVERLAY_COLOR},0.12) 100%)`,
   pageHero:
     "linear-gradient(100deg, rgba(46,26,8,0.85) 0%, rgba(61,34,9,0.62) 40%, rgba(61,34,9,0.32) 75%, rgba(61,34,9,0.18) 100%), linear-gradient(0deg, rgba(31,17,6,0.55) 0%, rgba(31,17,6,0.05) 35%, rgba(31,17,6,0.05) 65%, rgba(31,17,6,0.4) 100%)",
   gold: "linear-gradient(150deg, rgba(237,182,95,0.7) 0%, rgba(216,139,54,0.55) 42%, rgba(168,94,29,0.45) 75%, rgba(168,94,29,0.3) 100%)",
