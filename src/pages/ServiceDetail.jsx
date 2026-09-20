@@ -55,7 +55,7 @@ export default function ServiceDetail() {
                 <RevealItem key={w.title}>
                   <Link to="/gallery" className="group block">
                     <img
-                      src={`https://picsum.photos/seed/${w.seed}/560/${w.h}`}
+                      src={`https://picsum.photos/seed/${w.seed}/560/450`}
                       alt={w.title}
                       loading="lazy"
                       className="h-56 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.02]"

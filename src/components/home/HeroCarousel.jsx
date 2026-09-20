@@ -22,7 +22,11 @@ export default function HeroCarousel({ images, interval = 5000, className = "" }
 
   return (
     <div
-      className={`relative aspect-[8/5] w-full overflow-hidden rounded-[20px] border border-white/15 shadow-[0_30px_60px_rgba(20,11,4,0.45)] ${className}`}
+      // Below lg: aspect-ratio drives the height, so it scales proportionally
+      // with width at every breakpoint like any responsive image. At lg+: no
+      // fixed ratio — h-full lets it stretch to match the text column's
+      // height exactly, since its flex-row parent aligns children by stretch.
+      className={`relative aspect-[8/5] w-full overflow-hidden rounded-lg border border-white/15 lg:aspect-auto lg:h-full ${className}`}
     >
       <AnimatePresence initial={false} mode="sync">
         <motion.img

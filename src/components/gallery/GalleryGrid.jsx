@@ -32,7 +32,7 @@ export default function GalleryGrid() {
         })}
       </div>
 
-      <div className="mx-auto max-w-[1040px] px-6 pb-20 pt-8 [column-gap:20px] sm:columns-2 lg:columns-3">
+      <div className="mx-auto grid max-w-[1040px] grid-cols-1 gap-5 px-6 pb-20 pt-8 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence>
           {filtered.map((w, i) => (
             <motion.figure
@@ -42,7 +42,6 @@ export default function GalleryGrid() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.4, delay: (i % 6) * 0.04 }}
-              className="mb-5 break-inside-avoid"
             >
               <button
                 onClick={() => setLightboxIndex(i)}
@@ -50,10 +49,10 @@ export default function GalleryGrid() {
                 aria-label={`View ${w.title}`}
               >
                 <img
-                  src={`https://picsum.photos/seed/${w.seed}/560/${w.h}`}
+                  src={`https://picsum.photos/seed/${w.seed}/700/560`}
                   alt={w.title}
                   loading="lazy"
-                  className="w-full rounded-lg transition-transform duration-300 hover:scale-[1.01]"
+                  className="aspect-[5/4] w-full rounded-lg object-cover transition-transform duration-300 hover:scale-[1.01]"
                 />
               </button>
               <figcaption>
