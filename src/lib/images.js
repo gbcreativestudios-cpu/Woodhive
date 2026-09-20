@@ -1,4 +1,14 @@
 /**
+ * Mobile toggle for the hero's 3-image carousel.
+ * true  → carousel shows on mobile too, with extra top spacing that pushes
+ *         the heading/text/buttons down to make room for it.
+ * false → carousel is hidden on mobile (still always shows at desktop/lg+),
+ *         and mobile spacing reverts to its original, tighter values — the
+ *         heading/text/buttons stay exactly where they are now, no shift.
+ */
+export const SHOW_HERO_CAROUSEL_ON_MOBILE = true;
+
+/**
  * Central image map. Real photography drops in here — replace the URL for
  * any key and it updates everywhere that key is used.
  */
@@ -39,7 +49,7 @@ export const IMG = {
 
 /** Overlay gradients reused across photo-backed sections. */
 export const OVERLAY = {
-  hero: "linear-gradient(100deg, rgba(46,26,8,0.82) 0%, rgba(61,34,9,0.6) 38%, rgba(61,34,9,0.28) 68%, rgba(61,34,9,0.15) 100%), linear-gradient(0deg, rgba(31,17,6,0.55) 0%, rgba(31,17,6,0.05) 30%, rgba(31,17,6,0.05) 70%, rgba(31,17,6,0.5) 100%)",
+  hero: "linear-gradient(100deg, rgba(38,20,6,0.92) 0%, rgba(56,30,8,0.74) 38%, rgba(56,30,8,0.46) 68%, rgba(56,30,8,0.3) 100%), linear-gradient(0deg, rgba(26,14,5,0.68) 0%, rgba(26,14,5,0.15) 30%, rgba(26,14,5,0.15) 70%, rgba(26,14,5,0.62) 100%)",
   pageHero:
     "linear-gradient(100deg, rgba(46,26,8,0.85) 0%, rgba(61,34,9,0.62) 40%, rgba(61,34,9,0.32) 75%, rgba(61,34,9,0.18) 100%), linear-gradient(0deg, rgba(31,17,6,0.55) 0%, rgba(31,17,6,0.05) 35%, rgba(31,17,6,0.05) 65%, rgba(31,17,6,0.4) 100%)",
   gold: "linear-gradient(150deg, rgba(237,182,95,0.7) 0%, rgba(216,139,54,0.55) 42%, rgba(168,94,29,0.45) 75%, rgba(168,94,29,0.3) 100%)",
