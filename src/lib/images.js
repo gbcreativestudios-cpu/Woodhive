@@ -4,6 +4,14 @@
  */
 export const IMG = {
   homeHero: "https://picsum.photos/seed/woodhive-hero/1600/1100",
+  // Independent from homeHero on purpose — this is the hero's rounded photo
+  // card carousel. Swap any entry (or add/remove entries) without touching
+  // the background photo above.
+  heroCarousel: [
+    "https://picsum.photos/seed/woodhive-hero-carousel-1/900/720",
+    "https://picsum.photos/seed/woodhive-hero-carousel-2/900/720",
+    "https://picsum.photos/seed/woodhive-hero-carousel-3/900/720",
+  ],
   introCard: "https://picsum.photos/seed/woodhive-intro-card/700/640",
   introBg: "https://picsum.photos/seed/woodhive-introbg/1600/900",
 
