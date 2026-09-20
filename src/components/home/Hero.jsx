@@ -15,8 +15,8 @@ const item = {
 // mobile's top spacing/section height change based on whether the carousel
 // is showing there.
 const heroMinH = SHOW_HERO_CAROUSEL_ON_MOBILE
-  ? "min-h-[115vh] sm:min-h-[105vh] lg:min-h-screen"
-  : "min-h-[92vh] lg:min-h-screen";
+  ? "min-h-[115vh] sm:min-h-[105vh] lg:min-h-[92vh]"
+  : "min-h-[92vh] lg:min-h-[92vh]";
 const heroPadTop = SHOW_HERO_CAROUSEL_ON_MOBILE
   ? "pt-52 sm:pt-56 lg:pt-40"
   : "pt-36 sm:pt-40 lg:pt-40";
