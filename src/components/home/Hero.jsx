@@ -30,31 +30,31 @@ export default function Hero() {
       <div className="absolute inset-0" style={{ background: OVERLAY.hero }} />
       <Navbar />
 
-      {/* Two levels, mirroring how Navbar builds its box: an outer element
-          carries the px-4 sm:px-5 edge margin (same values as Navbar's
-          own outer header padding), and this inner element is the
-          mx-auto max-w-[1040px] box with NO padding of its own — so its
-          edges land exactly on the same 1040px reference frame as the
-          navbar card's visible border, instead of being inset an extra
-          20px inside it like before. */}
-      <div className="relative z-10 px-4 sm:px-5">
-        <motion.div
-          variants={container}
-          initial="hidden"
-          animate="show"
-          className={`mx-auto flex w-full max-w-[1040px] flex-col justify-start pb-16 lg:justify-end lg:pb-[100px] ${heroMinH} ${heroPadTop}`}
-        >
+      {/* Back to a single max-w-[1040px] box with its own px-6 padding —
+          undoing the earlier change that flush-matched this to the
+          navbar's edges. That left the left edge flush with the navbar
+          but the right edge short of it (grid content doesn't reach the
+          box's full width), reading as lopsided. This restores the
+          original, centered look: content narrower than the navbar,
+          with the navbar extending out evenly on both sides. */}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className={`relative z-10 mx-auto flex w-full max-w-[1040px] flex-col justify-start px-6 pb-16 lg:justify-end lg:pb-[100px] ${heroMinH} ${heroPadTop}`}
+      >
         {/* CSS grid (not flex) for the row: grid tracks resolve to a
             definite height even when driven by content, so the image's
             h-full reliably stretches to match the text column instead of
             collapsing — flex's two-pass sizing was leaving it at 0 height
             on desktop since its only content is an absolutely-positioned
             <img>. Tighter gap-4 keeps image/heading/text close together on
-            mobile. On desktop the columns are now 42/58 instead of a flat
-            50/50 (lg:grid-cols-[0.72fr_1fr]) with a tighter lg:gap-10, so
-            the text column gets noticeably more width to grow the heading
-            into — this is the "expand to match navbar width" change. */}
-        <div className="grid w-full grid-cols-1 items-start gap-4 lg:grid-cols-[0.72fr_1fr] lg:items-stretch lg:gap-10">
+            mobile. Back to an even lg:grid-cols-2 split with the original
+            lg:gap-14 (was skewed 0.72fr/1fr with a tighter gap, which read
+            as left-heavy with a big empty gap on the right past the
+            buttons) — this centers the image/text halves the way the row
+            looked before that change. */}
+        <div className="grid w-full grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-14">
           <motion.div
             variants={item}
             className={`w-full lg:h-full ${SHOW_HERO_CAROUSEL_ON_MOBILE ? "" : "hidden lg:block"}`}
@@ -63,20 +63,21 @@ export default function Hero() {
           </motion.div>
 
           <div className="flex w-full flex-col items-start text-left">
-            {/* Sized up from the previous 30–44px mobile clamp and fixed 36px
-                desktop override, scaled proportionally to the wider column
-                from the grid change above: mobile floor 30→32px, the
-                sub-lg clamp ceiling 44→48px, and the lg override 36→44px.
-                max-w-full (was max-w-xl) so the heading can use the whole
-                widened column instead of being capped at 576px. NOTE: exact
-                text-wrapping depends on the actual rendered "Jomolhari"
-                font's metrics, which I can't preview in this environment —
-                these sizes are a proportional best estimate, so check the
-                two lines still hold at your real breakpoints and nudge the
-                clamp/lg value a touch if either one slips to a 3rd line. */}
+            {/* Column is back to a 50/50 split (see the grid comment above),
+                narrower than the skewed layout this was last tuned for, so
+                the lg size comes down from 44px to 38px to stay safely
+                inside two lines at the restored column width — still up
+                from the original 36px thanks to the earlier width fix
+                (padding moved off the max-w box) giving this column a bit
+                more room than it had originally. max-w-full (was max-w-xl)
+                so the heading can use the whole column instead of being
+                capped at 576px. NOTE: exact text-wrapping depends on the
+                actual rendered "Jomolhari" font's metrics, which I can't
+                preview in this environment — check the two lines still
+                hold at your real breakpoints. */}
             <motion.h1
               variants={item}
-              className="max-w-full font-display text-[clamp(32px,5vw,48px)] leading-[1.1] text-cream-50 lg:text-[44px]"
+              className="max-w-full font-display text-[clamp(32px,5vw,48px)] leading-[1.1] text-cream-50 lg:text-[38px]"
             >
               Crafted in Wood.
               <br />
@@ -107,9 +108,8 @@ export default function Hero() {
               </ButtonRow>
             </motion.div>
           </div>
-          </div>
+        </div>
         </motion.div>
-      </div>
     </section>
   );
 }

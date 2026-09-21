@@ -59,7 +59,7 @@ export const IMG = {
 
 /** Overlay gradients reused across photo-backed sections. */
 export const OVERLAY = {
-  hero: `linear-gradient(0deg, rgba(${HERO_OVERLAY_COLOR},1) 0%, rgba(${HERO_OVERLAY_COLOR},0.6) 50%, rgba(${HERO_OVERLAY_COLOR},0.2) 100%)`,
+  hero: `linear-gradient(0deg, rgba(${HERO_OVERLAY_COLOR},1) 0%, rgba(${HERO_OVERLAY_COLOR},0.6) 50%, rgba(${HERO_OVERLAY_COLOR},0.4) 100%)`,
   pageHero:
     "linear-gradient(100deg, rgba(46,26,8,0.85) 0%, rgba(61,34,9,0.62) 40%, rgba(61,34,9,0.32) 75%, rgba(61,34,9,0.18) 100%), linear-gradient(0deg, rgba(31,17,6,0.55) 0%, rgba(31,17,6,0.05) 35%, rgba(31,17,6,0.05) 65%, rgba(31,17,6,0.4) 100%)",
   gold: "linear-gradient(150deg, rgba(237,182,95,0.7) 0%, rgba(216,139,54,0.55) 42%, rgba(168,94,29,0.45) 75%, rgba(168,94,29,0.3) 100%)",

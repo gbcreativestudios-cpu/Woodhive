@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Reveal from "./Reveal";
 
-export default function Accordion({ items, defaultOpen = 0 }) {
+export default function Accordion({ items, defaultOpen = -1 }) {
   const [open, setOpen] = useState(defaultOpen);
 
   return (
