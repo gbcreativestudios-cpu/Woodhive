@@ -11,12 +11,10 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 };
 
-// Desktop (lg+) is always the same regardless of the toggle above — only
-// mobile's top spacing/section height change based on whether the carousel
-// is showing there.
-const heroMinH = SHOW_HERO_CAROUSEL_ON_MOBILE
-  ? "min-h-[115vh] sm:min-h-[105vh] lg:min-h-[92vh]"
-  : "min-h-[92vh] lg:min-h-[92vh]";
+// The section is always a full viewport height now (mobile and desktop) —
+// the extra "push down" room on mobile when the carousel is showing comes
+// entirely from the bigger top padding below, not from an oversized min-height.
+const heroMinH = "min-h-screen";
 const heroPadTop = SHOW_HERO_CAROUSEL_ON_MOBILE
   ? "pt-52 sm:pt-56 lg:pt-40"
   : "pt-36 sm:pt-40 lg:pt-40";
