@@ -71,7 +71,7 @@ export default function StartProjectForm() {
             type="text"
             name="name"
             required
-            className="h-11 w-full rounded-lg border border-sand-100 bg-white px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+            className="h-11 w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
           />
         </div>
         <div>
@@ -80,7 +80,7 @@ export default function StartProjectForm() {
             type="email"
             name="email"
             required
-            className="h-11 w-full rounded-lg border border-sand-100 bg-white px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+            className="h-11 w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
           />
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function StartProjectForm() {
         <select
           name="project_type"
           required
-          className="h-11 w-full rounded-lg border border-sand-100 bg-white px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+          className="h-11 w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
           defaultValue=""
         >
           <option value="" disabled>
@@ -115,7 +115,7 @@ export default function StartProjectForm() {
           name="message"
           rows={4}
           required
-          className="w-full rounded-lg border border-sand-100 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+          className="w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
         />
       </div>
 

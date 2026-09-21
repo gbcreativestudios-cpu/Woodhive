@@ -30,17 +30,20 @@ export default function Hero() {
       <div className="absolute inset-0" style={{ background: OVERLAY.hero }} />
       <Navbar />
 
-      {/* max-w-[1040px] matches the site's standard content width (used by
-          the nav and every other section) so the hero lines up with them.
-          px-4 sm:px-5 now matches the navbar's own horizontal padding
-          exactly (it was px-6, ~8px tighter on each side), so the hero
-          content's edges line up flush with the navbar's edges. */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className={`relative z-10 mx-auto flex w-full max-w-[1040px] flex-col justify-start px-4 pb-16 sm:px-5 lg:justify-end lg:pb-[100px] ${heroMinH} ${heroPadTop}`}
-      >
+      {/* Two levels, mirroring how Navbar builds its box: an outer element
+          carries the px-4 sm:px-5 edge margin (same values as Navbar's
+          own outer header padding), and this inner element is the
+          mx-auto max-w-[1040px] box with NO padding of its own — so its
+          edges land exactly on the same 1040px reference frame as the
+          navbar card's visible border, instead of being inset an extra
+          20px inside it like before. */}
+      <div className="relative z-10 px-4 sm:px-5">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          animate="show"
+          className={`mx-auto flex w-full max-w-[1040px] flex-col justify-start pb-16 lg:justify-end lg:pb-[100px] ${heroMinH} ${heroPadTop}`}
+        >
         {/* CSS grid (not flex) for the row: grid tracks resolve to a
             definite height even when driven by content, so the image's
             h-full reliably stretches to match the text column instead of
@@ -89,25 +92,24 @@ export default function Hero() {
               We create thoughtful woodwork that bring warmth, character, and a sense of finish to
               the spaces you live, work, gather, and celebrate in.
             </motion.p>
-            {/* Buttons stay full width at every breakpoint (not just
-                mobile) — the !-prefixed classes override ButtonRow/Button's
-                own sm:w-auto default, which otherwise shrinks them to fit
-                their text from sm upward. mt-6 on mobile (was mt-12 at
-                every size) pulls the buttons up closer to the paragraph;
-                lg:mt-12 keeps the original, more generous desktop gap. */}
+            {/* Full width and stacked through sm/md (per design), but from
+                lg up the !-prefixed classes flip back to ButtonRow/Button's
+                own row/auto-width behavior so the two buttons sit side by
+                side on desktop instead of stacking at every breakpoint. */}
             <motion.div variants={item} className="mt-6 w-full lg:mt-12">
-              <ButtonRow className="sm:!w-full sm:!flex-col">
-                <Button to="/gallery" variant="gold" uppercase className="sm:!w-full">
+              <ButtonRow className="sm:!w-full sm:!flex-col lg:!w-auto lg:!flex-row lg:!gap-4">
+                <Button to="/gallery" variant="gold" uppercase className="sm:!w-full lg:!w-auto">
                   EXPLORE OUR WORK
                 </Button>
-                <Button onClick={openStartProject} variant="cream" uppercase className="sm:!w-full">
+                <Button onClick={openStartProject} variant="cream" uppercase className="sm:!w-full lg:!w-auto">
                   START A PROJECT
                 </Button>
               </ButtonRow>
             </motion.div>
           </div>
-        </div>
-      </motion.div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

@@ -85,7 +85,7 @@ export default function InquiryForm({ name, withUpload = false }) {
           name="message"
           rows={4}
           required
-          className="w-full rounded-lg border border-sand-100 bg-white px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+          className="w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
         />
       </div>
 
@@ -127,7 +127,7 @@ function Field({ label, name, type = "text", required }) {
         type={type}
         name={name}
         required={required}
-        className="h-11 w-full rounded-lg border border-sand-100 bg-white px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
+        className="h-11 w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500"
       />
     </div>
   );
