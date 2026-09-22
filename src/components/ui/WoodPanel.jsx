@@ -3,7 +3,7 @@ const TONES = {
   amber: "linear-gradient(135deg, #E29C4F 0%, #D88B36 55%, #A85E1D 100%)",
   gold: "linear-gradient(135deg, #F4D19B 0%, #EDB65F 55%, #C98A38 100%)",
   dusk: "linear-gradient(135deg, #3D2209 0%, #241408 60%, #1B3357 130%)",
-  sand: "linear-gradient(135deg, #F3EBDD 0%, #EFE7D8 60%, #D9C7A6 100%)",
+  sand: "linear-gradient(135deg, #F3EBDD 0%, #E0E0E0 60%, #D9C7A6 100%)",
 };
 
 let filterId = 0;
