@@ -42,6 +42,7 @@ export default function Services() {
         ]}
         img={IMG.products}
         formName="products-inquiry"
+        withProducts
         reverse
       />
 

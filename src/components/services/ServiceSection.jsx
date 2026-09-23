@@ -11,6 +11,7 @@ export default function ServiceSection({
   reverse,
   formName,
   formUpload,
+  withProducts,
 }) {
   return (
     <section id={id} className="mx-auto max-w-[1040px] scroll-mt-24 px-6 py-16 lg:py-20">
@@ -34,7 +35,7 @@ export default function ServiceSection({
         </Reveal>
 
         <Reveal variant="up" delay={0.1} className={reverse ? "lg:order-1" : "lg:order-2"}>
-          <InquiryForm name={formName} withUpload={formUpload} />
+          <InquiryForm name={formName} withUpload={formUpload} withProducts={withProducts} />
         </Reveal>
       </div>
     </section>
