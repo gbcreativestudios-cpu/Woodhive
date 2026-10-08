@@ -1,16 +1,19 @@
 import Reveal from "../ui/Reveal";
 import Button from "../ui/Button";
 import { useInquiryModal } from "../../context/InquiryModalContext";
+import defaults from "../../../content/home/closing-cta.json";
 
 /**
  * `to` links somewhere; omit it and the button opens the general
  * Start a Project modal instead (the default — most closing CTAs are a
- * generic "let's talk" rather than a link to a specific page).
+ * generic "let's talk" rather than a link to a specific page). Defaults
+ * come from content/home/closing-cta.json; other pages pass their own
+ * content (see content/about, content/gallery, content/faq, content/services).
  */
 export default function ClosingCTA({
-  title = "Let's build something purposeful",
-  body = "Whether you're transforming a space, creating something custom, or preparing for an event, tell us what you're working on.",
-  cta = "Start a Conversation",
+  title = defaults.title,
+  body = defaults.body,
+  cta = defaults.buttonLabel,
   to,
 }) {
   const { openStartProject } = useInquiryModal();

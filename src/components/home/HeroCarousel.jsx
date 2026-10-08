@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 /**
  * Rounded photo card with a crossfading image carousel and dot controls,
  * matching the hero reference layout. Images are passed in (see
- * IMG.heroCarousel in lib/images.js) and can be swapped independently of
+ * content/home/hero.json's carouselImages) and can be swapped independently of
  * the hero's background photo.
  */
 export default function HeroCarousel({ images, interval = 5000, className = "" }) {

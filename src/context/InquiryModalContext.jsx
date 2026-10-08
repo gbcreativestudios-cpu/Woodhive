@@ -25,7 +25,13 @@ export function InquiryModalProvider({ children }) {
       {children}
       <Modal open={!!activeSlug} onClose={close} title="Inquiry form">
         {activeSlug === "start-a-project" && <StartProjectForm />}
-        {service && <InquiryForm name={service.formName} withUpload={service.formUpload} />}
+        {service && (
+          <InquiryForm
+            name={service.formName}
+            withUpload={service.formUpload}
+            withProducts={service.hasProductsPicker}
+          />
+        )}
       </Modal>
     </InquiryModalContext.Provider>
   );

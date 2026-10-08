@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
 import Reveal from "../ui/Reveal";
-import { LogoMark } from "../ui/Logo";
 import { SERVICES } from "../../data/services";
+import settings from "../../../content/settings/general.json";
 
 /* Brand marks aren't in lucide's icon set, so they're drawn here to match its weight. */
 function InstagramIcon({ className = "h-[18px] w-[18px]" }) {
@@ -24,20 +24,20 @@ function TikTokIcon({ className = "h-[18px] w-[18px]" }) {
   );
 }
 
-const SOCIALS = [
-  { label: "Instagram", href: "https://instagram.com", Icon: InstagramIcon },
-  { label: "TikTok", href: "https://tiktok.com", Icon: TikTokIcon },
-  { label: "Email", href: "mailto:studio@thewoodhive.com", Icon: Mail },
-];
-
 export default function Footer() {
+  const SOCIALS = [
+    { label: "Instagram", href: settings.instagramUrl, Icon: InstagramIcon },
+    { label: "TikTok", href: settings.tiktokUrl, Icon: TikTokIcon },
+    { label: "Email", href: `mailto:${settings.email}`, Icon: Mail },
+  ];
+
   return (
     <footer className="bg-brown-950">
       <Reveal className="mx-auto max-w-[1040px] px-6 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
           <div>
-            {/* Large logo mark, per the reference */}
-            <LogoMark className="h-16 w-16" />
+            {/* Footer's own logo image — independent from the nav's */}
+            <img src={settings.footerLogoImage} alt="The Wood Hive" className="h-16 w-auto" />
           </div>
 
           <div>
@@ -66,9 +66,9 @@ export default function Footer() {
           <div>
             <h4 className="mb-3.5 text-[13.5px] font-bold text-cream-50">Connect</h4>
             <ul className="flex flex-col gap-2 text-[13.5px] text-cream-50/60">
-              <li>studio@thewoodhive.com</li>
-              <li>+1 (555) 438-4483</li>
-              <li>140 Timberline Way, Suite 400</li>
+              <li>{settings.email}</li>
+              <li>{settings.phone}</li>
+              <li>{settings.address}</li>
             </ul>
             <div className="mt-4 flex gap-2.5">
               {SOCIALS.map(({ label, href, Icon }) => (
@@ -88,8 +88,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-2 border-t border-cream-50/10 pt-5 text-xs text-cream-50/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} The Wood Hive. All rights reserved.</p>
-          <p>Structural Intelligence &amp; Emotional Craftsmanship.</p>
+          <p>&copy; {new Date().getFullYear()} {settings.footerCopyrightName}. All rights reserved.</p>
+          <p>{settings.footerTagline}</p>
         </div>
       </Reveal>
     </footer>

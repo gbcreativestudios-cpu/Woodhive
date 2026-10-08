@@ -49,7 +49,7 @@ export default function GalleryGrid() {
                 aria-label={`View ${w.title}`}
               >
                 <img
-                  src={`https://picsum.photos/seed/${w.seed}/700/560`}
+                  src={w.image}
                   alt={w.title}
                   loading="lazy"
                   className="aspect-[5/4] w-full rounded-lg object-cover transition-transform duration-300 hover:scale-[1.01]"

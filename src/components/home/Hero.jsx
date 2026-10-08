@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
-import { IMG, OVERLAY, SHOW_HERO_CAROUSEL_ON_MOBILE } from "../../lib/images";
+import { OVERLAY, SHOW_HERO_CAROUSEL_ON_MOBILE } from "../../lib/images";
 import Button, { ButtonRow } from "../ui/Button";
 import Navbar from "../layout/Navbar";
 import HeroCarousel from "./HeroCarousel";
 import { useInquiryModal } from "../../context/InquiryModalContext";
+import hero from "../../../content/home/hero.json";
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.14, delayChildren: 0.25 } } };
 const item = {
@@ -26,7 +27,7 @@ export default function Hero() {
 
   return (
     <section className={`relative overflow-hidden ${heroMinH}`}>
-      <img src={IMG.homeHero} alt="" className="absolute inset-0 h-full w-full object-cover" />
+      <img src={hero.backgroundImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0" style={{ background: OVERLAY.hero }} />
       <Navbar />
 
@@ -59,7 +60,7 @@ export default function Hero() {
             variants={item}
             className={`w-full lg:h-full ${SHOW_HERO_CAROUSEL_ON_MOBILE ? "" : "hidden lg:block"}`}
           >
-            <HeroCarousel images={IMG.heroCarousel} />
+            <HeroCarousel images={hero.carouselImages} />
           </motion.div>
 
           <div className="flex w-full flex-col items-start text-left">
@@ -79,9 +80,9 @@ export default function Hero() {
               variants={item}
               className="max-w-full font-display text-[clamp(32px,5vw,48px)] leading-[1.1] text-cream-50 lg:text-[38px]"
             >
-              Crafted in Wood.
+              {hero.headingLine1}
               <br />
-              Defined by Elegance.
+              {hero.headingLine2}
             </motion.h1>
             {/* Tight heading→paragraph gap, then a clearly bigger gap before
                 the buttons — groups heading+text as one cluster, buttons as
@@ -90,8 +91,7 @@ export default function Hero() {
               variants={item}
               className="mt-3 max-w-md text-[15px] leading-relaxed text-cream-50/85"
             >
-              We create thoughtful woodwork that bring warmth, character, and a sense of finish to
-              the spaces you live, work, gather, and celebrate in.
+              {hero.paragraph}
             </motion.p>
             {/* Full width and stacked through sm/md (per design), but from
                 lg up the !-prefixed classes flip back to ButtonRow/Button's
@@ -100,10 +100,10 @@ export default function Hero() {
             <motion.div variants={item} className="mt-6 w-full lg:mt-12">
               <ButtonRow className="sm:!w-full sm:!flex-col lg:!w-auto lg:!flex-row lg:!gap-4">
                 <Button to="/gallery" variant="gold" uppercase className="sm:!w-full lg:!w-auto">
-                  EXPLORE OUR WORK
+                  {hero.primaryButtonLabel}
                 </Button>
                 <Button onClick={openStartProject} variant="cream" uppercase className="sm:!w-full lg:!w-auto">
-                  START A PROJECT
+                  {hero.secondaryButtonLabel}
                 </Button>
               </ButtonRow>
             </motion.div>

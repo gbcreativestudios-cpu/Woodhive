@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "../ui/Reveal";
 import { SERVICES } from "../../data/services";
+import intro from "../../../content/home/services-intro.json";
 
 export default function Services() {
   return (
     <section className="mx-auto max-w-[1040px] px-6 py-16">
       <Reveal className="max-w-md">
-        <p className="text-[13.5px] font-bold text-orange-500">Our core services</p>
-        <h2 className="mt-2.5 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">What we do</h2>
+        <p className="text-[13.5px] font-bold text-orange-500">{intro.eyebrow}</p>
+        <h2 className="mt-2.5 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{intro.heading}</h2>
       </Reveal>
 
       <div className="mt-12 flex flex-col gap-14">

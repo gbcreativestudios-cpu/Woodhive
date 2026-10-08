@@ -1,0 +1,528 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: simple
+
+collections:
+  # ---------------------------------------------------------------------
+  # Site-wide settings: the two separate logo images, contact info, socials
+  # ---------------------------------------------------------------------
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "content/settings/general.json"
+        label: "General"
+        name: "general"
+        fields:
+          - { label: "Nav Bar Logo", name: "navLogoImage", widget: "image", hint: "Shown in the top navigation bar." }
+          - { label: "Footer Logo", name: "footerLogoImage", widget: "image", hint: "Shown in the site footer — can be a different image from the nav logo." }
+          - { label: "Contact Email", name: "email", widget: "string" }
+          - { label: "Contact Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "string" }
+          - { label: "Instagram URL", name: "instagramUrl", widget: "string" }
+          - { label: "TikTok URL", name: "tiktokUrl", widget: "string" }
+          - { label: "Footer Tagline", name: "footerTagline", widget: "string" }
+          - { label: "Footer Copyright Name", name: "footerCopyrightName", widget: "string" }
+
+  # ---------------------------------------------------------------------
+  # Home page — one file per section, in the order they appear
+  # ---------------------------------------------------------------------
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "content/home/page.json"
+        label: "Section Order"
+        name: "page"
+        fields:
+          - label: "Sections (drag to reorder, click + to add one back, click the trash icon to remove one)"
+            name: "sections"
+            widget: "list"
+            field:
+              label: "Section"
+              name: "section"
+              widget: "select"
+              options:
+                - { label: "Hero", value: "hero" }
+                - { label: "Stats Strip", value: "stats" }
+                - { label: "Intro", value: "intro" }
+                - { label: "Services", value: "services" }
+                - { label: "Capabilities CTA", value: "capabilitiesCta" }
+                - { label: "Process", value: "process" }
+                - { label: "Selected Work", value: "selectedWork" }
+                - { label: "FAQ Teaser", value: "faq" }
+                - { label: "Reviews", value: "reviews" }
+                - { label: "Closing CTA", value: "closingCta" }
+      - file: "content/home/hero.json"
+        label: "Hero"
+        name: "hero"
+        fields:
+          - { label: "Heading Line 1", name: "headingLine1", widget: "string" }
+          - { label: "Heading Line 2", name: "headingLine2", widget: "string" }
+          - { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Primary Button Label", name: "primaryButtonLabel", widget: "string" }
+          - { label: "Secondary Button Label", name: "secondaryButtonLabel", widget: "string" }
+          - { label: "Background Image", name: "backgroundImage", widget: "image" }
+          - label: "Carousel Images"
+            name: "carouselImages"
+            widget: "list"
+            field: { label: "Image", name: "image", widget: "image" }
+      - file: "content/home/stats.json"
+        label: "Stats Strip"
+        name: "stats"
+        fields:
+          - label: "Stats"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Value (number)", name: "value", widget: "number" }
+              - { label: "Suffix (e.g. + or %)", name: "suffix", widget: "string", required: false }
+              - { label: "Label", name: "label", widget: "string" }
+      - file: "content/home/intro.json"
+        label: "Intro Section"
+        name: "intro"
+        fields:
+          - { label: "Background Image", name: "backgroundImage", widget: "image" }
+          - { label: "Card Image", name: "cardImage", widget: "image" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Link Label", name: "linkLabel", widget: "string" }
+      - file: "content/home/services-intro.json"
+        label: "Services Section Heading"
+        name: "servicesIntro"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+      - file: "content/home/process.json"
+        label: "Process Section"
+        name: "process"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      - file: "content/home/selected-work.json"
+        label: "Selected Work Section"
+        name: "selectedWork"
+        fields:
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Link Label", name: "linkLabel", widget: "string" }
+          - label: "Pieces"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Category", name: "category", widget: "string" }
+      - file: "content/home/capabilities-cta.json"
+        label: "Capabilities CTA"
+        name: "capabilitiesCta"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Button Label", name: "buttonLabel", widget: "string" }
+      - file: "content/home/faq-teaser.json"
+        label: "FAQ Teaser Section"
+        name: "faqTeaser"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Link Label", name: "linkLabel", widget: "string" }
+      - file: "content/reviews/section.json"
+        label: "Reviews Section"
+        name: "reviewsSection"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "\"Leave a review\" Button Label", name: "leaveReviewLabel", widget: "string" }
+          - { label: "Message when there are no reviews yet", name: "emptyMessage", widget: "string" }
+          - { label: "Start scrolling ticker at this many reviews (desktop)", name: "tickerFromDesktop", widget: "number", value_type: "int", min: 1, default: 3 }
+          - { label: "Start scrolling ticker at this many reviews (mobile)", name: "tickerFromMobile", widget: "number", value_type: "int", min: 1, default: 2 }
+      - file: "content/home/closing-cta.json"
+        label: "Closing CTA"
+        name: "closingCta"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+          - { label: "Button Label", name: "buttonLabel", widget: "string" }
+
+  # ---------------------------------------------------------------------
+  # About page
+  # ---------------------------------------------------------------------
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "content/about/hero.json"
+        label: "Hero"
+        name: "hero"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "text" }
+          - { label: "Image", name: "image", widget: "image" }
+      - file: "content/about/story.json"
+        label: "Story Section"
+        name: "story"
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
+          - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
+      - file: "content/about/values.json"
+        label: "Values Section"
+        name: "values"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Values"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "img", widget: "image" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+      - file: "content/about/team.json"
+        label: "Team Section"
+        name: "team"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Members"
+            name: "members"
+            widget: "list"
+            fields:
+              - { label: "Photo", name: "img", widget: "image" }
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }
+      - file: "content/about/closing-cta.json"
+        label: "Closing CTA"
+        name: "closingCta"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+
+  # ---------------------------------------------------------------------
+  # Gallery page
+  # ---------------------------------------------------------------------
+  - name: "gallery_page"
+    label: "Gallery Page"
+    files:
+      - file: "content/gallery/hero.json"
+        label: "Hero"
+        name: "hero"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+      - file: "content/gallery/closing-cta.json"
+        label: "Closing CTA"
+        name: "closingCta"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+      - file: "content/gallery/categories.json"
+        label: "Filter Categories"
+        name: "categories"
+        fields:
+          - label: "Categories"
+            name: "items"
+            widget: "list"
+            hint: "First one should stay \"All\". Each other one must exactly match a Gallery Item's category and a Service's \"Gallery Category\" below."
+
+  # ---------------------------------------------------------------------
+  # FAQ page
+  # ---------------------------------------------------------------------
+  - name: "faq_page"
+    label: "FAQ Page"
+    files:
+      - file: "content/faq/hero.json"
+        label: "Hero"
+        name: "hero"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+      - file: "content/faq/closing-cta.json"
+        label: "Closing CTA"
+        name: "closingCta"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+      - file: "content/faq/groups.json"
+        label: "All Questions"
+        name: "groups"
+        fields:
+          - label: "Groups"
+            name: "groups"
+            widget: "list"
+            hint: "The first group (\"General\") also doubles as the short FAQ list shown on the home page."
+            fields:
+              - { label: "Group Title", name: "title", widget: "string" }
+              - label: "Questions"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Question", name: "q", widget: "string" }
+                  - { label: "Answer", name: "a", widget: "text" }
+
+  # ---------------------------------------------------------------------
+  # Service pages — shared copy + the repeatable service entries
+  # ---------------------------------------------------------------------
+  - name: "services_shared"
+    label: "Service Pages (shared copy)"
+    files:
+      - file: "content/services/closing-cta.json"
+        label: "Closing CTA"
+        name: "closingCta"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "text" }
+          - { label: "Button Label", name: "buttonLabel", widget: "string" }
+      - file: "content/services/detail-page-copy.json"
+        label: "Static Labels"
+        name: "detailPageCopy"
+        fields:
+          - { label: "\"Work we've done\" eyebrow", name: "workDoneEyebrow", widget: "string" }
+          - { label: "CTA paragraph", name: "ctaParagraph", widget: "text" }
+          - { label: "\"Looking for something else?\" label", name: "otherServicesLabel", widget: "string" }
+
+  # ---------------------------------------------------------------------
+  # Form text and fields — every label, button and message, plus the fields
+  # themselves (add / delete / reorder), for all forms on the site
+  # ---------------------------------------------------------------------
+  - name: "forms"
+    label: "Form Text & Fields"
+    files:
+      - file: "content/forms.json"
+        label: "All Forms"
+        name: "forms"
+        fields:
+          - label: "Inquiry Form (each service page / popup)"
+            name: "inquiryForm"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Form Fields (add, delete, drag to reorder)"
+                name: "fields"
+                widget: "list"
+                hint: "Short fields (text / email / phone) show first in a two-column grid, then the form's special block (products list, project type, photo upload), then long-answer fields. Keep one 'Field Key' per field unique."
+                fields:
+                  - { label: "Label shown to the visitor", name: "label", widget: "string" }
+                  - label: "Field Key (how it appears in your Netlify submissions)"
+                    name: "name"
+                    widget: "string"
+                    pattern: ["^[a-z][a-z0-9_]*$", "Lowercase letters, numbers and underscores only, starting with a letter (e.g. company_name)"]
+                    hint: "Changing this later starts a new column in Netlify; older submissions keep the old name."
+                  - label: "Type"
+                    name: "type"
+                    widget: "select"
+                    default: "text"
+                    options:
+                      - { label: "Short text", value: "text" }
+                      - { label: "Email", value: "email" }
+                      - { label: "Phone", value: "tel" }
+                      - { label: "Long text (paragraph)", value: "textarea" }
+                  - { label: "Required?", name: "required", widget: "boolean", default: true }
+                  - label: "Width"
+                    name: "width"
+                    widget: "select"
+                    default: "half"
+                    options:
+                      - { label: "Half width (sits beside another short field)", value: "half" }
+                      - { label: "Full width", value: "full" }
+              - { label: "Upload Field Label", name: "uploadLabel", widget: "string" }
+              - { label: "Upload Prompt Text", name: "uploadPrompt", widget: "string" }
+              - { label: "Submit Button Label", name: "submitLabel", widget: "string" }
+              - { label: "Sending Button Label", name: "sendingLabel", widget: "string" }
+              - { label: "Error Message", name: "errorMessage", widget: "text" }
+              - { label: "Success Heading", name: "successHeading", widget: "string" }
+              - { label: "Success Message", name: "successMessage", widget: "text" }
+              - { label: "Honeypot Label (spam trap, not user-facing)", name: "honeypotLabel", widget: "string" }
+          - label: "Start a Project Form (hero CTA)"
+            name: "startProjectForm"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Form Fields (add, delete, drag to reorder)"
+                name: "fields"
+                widget: "list"
+                hint: "Short fields (text / email / phone) show first in a two-column grid, then the form's special block (products list, project type, photo upload), then long-answer fields. Keep one 'Field Key' per field unique."
+                fields:
+                  - { label: "Label shown to the visitor", name: "label", widget: "string" }
+                  - label: "Field Key (how it appears in your Netlify submissions)"
+                    name: "name"
+                    widget: "string"
+                    pattern: ["^[a-z][a-z0-9_]*$", "Lowercase letters, numbers and underscores only, starting with a letter (e.g. company_name)"]
+                    hint: "Changing this later starts a new column in Netlify; older submissions keep the old name."
+                  - label: "Type"
+                    name: "type"
+                    widget: "select"
+                    default: "text"
+                    options:
+                      - { label: "Short text", value: "text" }
+                      - { label: "Email", value: "email" }
+                      - { label: "Phone", value: "tel" }
+                      - { label: "Long text (paragraph)", value: "textarea" }
+                  - { label: "Required?", name: "required", widget: "boolean", default: true }
+                  - label: "Width"
+                    name: "width"
+                    widget: "select"
+                    default: "half"
+                    options:
+                      - { label: "Half width (sits beside another short field)", value: "half" }
+                      - { label: "Full width", value: "full" }
+              - { label: "Project Type Field Label", name: "projectTypeLabel", widget: "string" }
+              - { label: "Project Type Placeholder", name: "projectTypePlaceholder", widget: "string" }
+              - { label: "\"Not sure yet\" Option Label", name: "notSureLabel", widget: "string" }
+              - { label: "Submit Button Label", name: "submitLabel", widget: "string" }
+              - { label: "Sending Button Label", name: "sendingLabel", widget: "string" }
+              - { label: "Error Message", name: "errorMessage", widget: "text" }
+              - { label: "Success Heading", name: "successHeading", widget: "string" }
+              - { label: "Success Message", name: "successMessage", widget: "text" }
+              - { label: "Honeypot Label (spam trap, not user-facing)", name: "honeypotLabel", widget: "string" }
+          - label: "Leave a Review Form"
+            name: "reviewForm"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Subheading", name: "subheading", widget: "text" }
+              - label: "Form Fields (add, delete, drag to reorder)"
+                name: "fields"
+                widget: "list"
+                hint: "Short fields (text / email / phone) show first in a two-column grid, then the form's special block (products list, project type, photo upload), then long-answer fields. Keep one 'Field Key' per field unique."
+                fields:
+                  - { label: "Label shown to the visitor", name: "label", widget: "string" }
+                  - label: "Field Key (how it appears in your Netlify submissions)"
+                    name: "name"
+                    widget: "string"
+                    pattern: ["^[a-z][a-z0-9_]*$", "Lowercase letters, numbers and underscores only, starting with a letter (e.g. company_name)"]
+                    hint: "Changing this later starts a new column in Netlify; older submissions keep the old name."
+                  - label: "Type"
+                    name: "type"
+                    widget: "select"
+                    default: "text"
+                    options:
+                      - { label: "Short text", value: "text" }
+                      - { label: "Email", value: "email" }
+                      - { label: "Phone", value: "tel" }
+                      - { label: "Long text (paragraph)", value: "textarea" }
+                  - { label: "Required?", name: "required", widget: "boolean", default: true }
+                  - label: "Width"
+                    name: "width"
+                    widget: "select"
+                    default: "half"
+                    options:
+                      - { label: "Half width (sits beside another short field)", value: "half" }
+                      - { label: "Full width", value: "full" }
+              - { label: "Photo Field Label", name: "photoLabel", widget: "string" }
+              - { label: "Photo Prompt Text", name: "photoPrompt", widget: "string" }
+              - { label: "Photo Too Large Message", name: "photoTooLarge", widget: "string" }
+              - { label: "Submit Button Label", name: "submitLabel", widget: "string" }
+              - { label: "Sending Button Label", name: "sendingLabel", widget: "string" }
+              - { label: "Error Message", name: "errorMessage", widget: "text" }
+              - { label: "Success Heading", name: "successHeading", widget: "string" }
+              - { label: "Success Message", name: "successMessage", widget: "text" }
+              - { label: "Honeypot Label (spam trap, not user-facing)", name: "honeypotLabel", widget: "string" }
+          - label: "Products Picker (shown for services with the products list switched on)"
+            name: "productsPicker"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "\"Not listed\" Option Label", name: "notListedLabel", widget: "string" }
+              - { label: "Custom Product Placeholder", name: "otherPlaceholder", widget: "string" }
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services/items"
+    create: false
+    delete: false
+    identifier_field: "title"
+    fields:
+      - { label: "Slug (used in the URL — don't change unless you also update links)", name: "slug", widget: "string" }
+      - { label: "Netlify Form Name (unique per service)", name: "formName", widget: "string", hint: "Auto-registered with Netlify on every build." }
+      - { label: "Allow Photo Upload in Form?", name: "formUpload", widget: "boolean", default: false }
+      - { label: "Show the Products checklist (with \"Not listed\") in this service's form?", name: "hasProductsPicker", widget: "boolean", default: false }
+      - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Nav Label", name: "navLabel", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Bullet Points"
+        name: "points"
+        widget: "list"
+      - { label: "Image", name: "img", widget: "image" }
+      - label: "Gallery Category"
+        name: "galleryCategory"
+        widget: "string"
+        hint: "Must exactly match one of the Gallery Page's Filter Categories, and the category used on this service's Gallery Items."
+      - { label: "CTA Heading", name: "ctaLabel", widget: "string" }
+
+  # ---------------------------------------------------------------------
+  # Wooden Products catalog (the checkbox list in the inquiry forms)
+  # ---------------------------------------------------------------------
+  - name: "products"
+    label: "Wooden Products Catalog"
+    files:
+      - file: "content/products.json"
+        label: "Products"
+        name: "products"
+        fields:
+          - label: "Products"
+            name: "items"
+            widget: "list"
+            hint: "Shown as checkboxes whenever someone selects Wooden Products in an inquiry form."
+
+  # ---------------------------------------------------------------------
+  # Gallery items
+  # ---------------------------------------------------------------------
+  - name: "gallery"
+    label: "Gallery Items"
+    folder: "content/gallery/items"
+    create: true
+    delete: true
+    identifier_field: "title"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "string"
+        hint: "Must exactly match one of the Gallery Page's Filter Categories."
+      - { label: "Image", name: "image", widget: "image" }
+
+  # ---------------------------------------------------------------------
+  # Customer reviews — new submissions arrive in Netlify (Forms → leave-a-review);
+  # publish the good ones here. Newest date shows last (bottom / end of ticker).
+  # ---------------------------------------------------------------------
+  - name: "reviews"
+    label: "Customer Reviews"
+    folder: "content/reviews/items"
+    create: true
+    delete: true
+    extension: "json"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.name}}"
+    identifier_field: "name"
+    summary: "{{name}} — {{company}}"
+    fields:
+      - { label: "Published (untick to hide without deleting)", name: "published", widget: "boolean", default: true }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Company", name: "company", widget: "string" }
+      - { label: "Position", name: "position", widget: "string" }
+      - { label: "Review", name: "quote", widget: "text" }
+      - { label: "Photo (optional)", name: "photo", widget: "image", required: false }
+      - { label: "Date (newest shows last)", name: "date", widget: "datetime", default: "", format: "YYYY-MM-DDTHH:mm:ss.SSSZ" }

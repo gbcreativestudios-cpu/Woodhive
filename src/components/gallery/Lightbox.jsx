@@ -65,7 +65,7 @@ export default function Lightbox({ items, index, onClose, onNavigate }) {
             className="max-h-full max-w-3xl"
           >
             <img
-              src={`https://picsum.photos/seed/${item?.seed}/1000/${Math.round((item?.h || 400) * 1.7)}`}
+              src={item?.image}
               alt={item?.title}
               className="max-h-[75vh] w-auto rounded-lg object-contain"
             />

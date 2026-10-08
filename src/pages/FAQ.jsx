@@ -3,15 +3,16 @@ import Accordion from "../components/ui/Accordion";
 import Reveal from "../components/ui/Reveal";
 import ClosingCTA from "../components/home/ClosingCTA";
 import { FAQ_GROUPS } from "../data/faqs";
-import { IMG } from "../lib/images";
+import hero from "../../content/faq/hero.json";
+import closing from "../../content/faq/closing-cta.json";
 
 export default function FAQ() {
   return (
     <>
       <PageHero
-        eyebrow="FAQ"
-        title="Answers before we begin"
-        image={IMG.faqHero}
+        eyebrow={hero.eyebrow}
+        title={hero.title}
+        image={hero.image}
         minH="min-h-[42vh]"
       />
 
@@ -26,10 +27,7 @@ export default function FAQ() {
         ))}
       </div>
 
-      <ClosingCTA
-        title="Still have a question?"
-        body="Send it our way — we're happy to walk through the details before you commit to anything."
-      />
+      <ClosingCTA title={closing.title} body={closing.body} />
     </>
   );
 }

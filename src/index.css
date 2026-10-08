@@ -51,3 +51,36 @@ h1, h2, h3, h4,
     scroll-behavior: auto !important;
   }
 }
+
+/* Reviews ticker: the track holds two identical halves, so sliding it by
+   exactly -50% loops with no visible seam. Pauses on hover / keyboard focus. */
+@keyframes reviews-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.reviews-marquee {
+  overflow: hidden;
+  /* breathing room so card shadows aren't clipped; the negative margin cancels it out */
+  padding-block: 24px;
+  margin-block: -24px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+
+.reviews-track {
+  display: flex;
+  width: max-content;
+  animation: reviews-marquee var(--marquee-duration, 60s) linear infinite;
+}
+
+.reviews-marquee:hover .reviews-track,
+.reviews-marquee:focus-within .reviews-track {
+  animation-play-state: paused;
+}
+
+/* Reduced motion: no auto-scroll — let people scroll the row themselves. */
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee { overflow-x: auto; }
+  .reviews-track { animation: none !important; }
+}

@@ -1,22 +1,20 @@
 import PageHero from "../components/layout/PageHero";
 import GalleryGrid from "../components/gallery/GalleryGrid";
 import ClosingCTA from "../components/home/ClosingCTA";
-import { IMG } from "../lib/images";
+import hero from "../../content/gallery/hero.json";
+import closing from "../../content/gallery/closing-cta.json";
 
 export default function Gallery() {
   return (
     <>
       <PageHero
-        eyebrow="Portfolio"
-        title="Work across renovation, product, and rental"
-        image={IMG.galleryHero}
+        eyebrow={hero.eyebrow}
+        title={hero.title}
+        image={hero.image}
         minH="min-h-[46vh]"
       />
       <GalleryGrid />
-      <ClosingCTA
-        title="See something you like?"
-        body="Tell us which piece caught your eye, or bring your own idea — we'll help you shape it."
-      />
+      <ClosingCTA title={closing.title} body={closing.body} />
     </>
   );
 }

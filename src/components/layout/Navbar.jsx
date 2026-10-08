@@ -5,6 +5,7 @@ import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "../ui/Logo";
 import { SERVICES } from "../../data/services";
 import { useInquiryModal } from "../../context/InquiryModalContext";
+import settings from "../../../content/settings/general.json";
 
 const linkClass = ({ isActive }) =>
   `text-sm transition-colors ${
@@ -50,7 +51,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-[1040px] items-center justify-between rounded-lg border border-white/15 bg-[rgba(30,17,7,0.45)] px-4 py-3 backdrop-blur-lg sm:px-5">
         <Link to="/" onClick={closeAll}>
-          <Logo />
+          <Logo src={settings.navLogoImage} imgClassName="h-7 w-auto" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">

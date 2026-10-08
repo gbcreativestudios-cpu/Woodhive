@@ -5,6 +5,8 @@ import ClosingCTA from "../components/home/ClosingCTA";
 import { SERVICES, SERVICES_BY_SLUG } from "../data/services";
 import { WORKS } from "../data/gallery";
 import { useInquiryModal } from "../context/InquiryModalContext";
+import copy from "../../content/services/detail-page-copy.json";
+import closing from "../../content/services/closing-cta.json";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -45,7 +47,7 @@ export default function ServiceDetail() {
         <section className="bg-sand-100 px-6 py-16">
           <div className="mx-auto max-w-[1040px]">
             <Reveal>
-              <p className="text-[13.5px] font-bold text-orange-500">Work we&rsquo;ve done</p>
+              <p className="text-[13.5px] font-bold text-orange-500">{copy.workDoneEyebrow}</p>
               <h2 className="mt-2.5 font-display text-[clamp(24px,3vw,32px)] text-brown-900">
                 {service.title} in practice
               </h2>
@@ -55,7 +57,7 @@ export default function ServiceDetail() {
                 <RevealItem key={w.title}>
                   <Link to="/gallery" className="group block">
                     <img
-                      src={`https://picsum.photos/seed/${w.seed}/560/450`}
+                      src={w.image}
                       alt={w.title}
                       loading="lazy"
                       className="h-56 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.02]"
@@ -76,7 +78,7 @@ export default function ServiceDetail() {
             {service.ctaLabel}
           </h2>
           <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#5b4636]">
-            Tell us what you&rsquo;re working with and we&rsquo;ll come back with next steps.
+            {copy.ctaParagraph}
           </p>
           <button
             onClick={() => open(service.slug)}
@@ -91,7 +93,7 @@ export default function ServiceDetail() {
       <section className="border-t border-sand-100 px-6 py-14">
         <div className="mx-auto max-w-[1040px]">
           <p className="text-center text-[13px] font-semibold text-brown-900/50">
-            Looking for something else?
+            {copy.otherServicesLabel}
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
             {otherServices.map((s) => (
@@ -107,11 +109,7 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      <ClosingCTA
-        title="Have something else in mind?"
-        body="Bring us the idea, the problem, or the space — we'll help you shape it."
-        cta="Start a Conversation"
-      />
+      <ClosingCTA title={closing.title} body={closing.body} cta={closing.buttonLabel} />
     </>
   );
 }

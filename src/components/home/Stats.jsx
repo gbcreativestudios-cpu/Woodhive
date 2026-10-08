@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import AnimatedCounter from "../ui/AnimatedCounter";
-
-const STATS = [
-  { value: 340, suffix: "+", label: "SUCCESSFUL PROJECTS" },
-  { value: 10, suffix: "+", label: "TEAM MEMBERS" },
-  { value: 75, suffix: "+", label: "SATISFIED CLIENTS" },
-  { value: 100, suffix: "%", label: "CLIENT SATISFACTION" },
-];
+import stats from "../../../content/home/stats.json";
 
 export default function Stats() {
   return (
@@ -18,7 +12,7 @@ export default function Stats() {
         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
         className="mx-auto grid max-w-[1040px] grid-cols-2 gap-7 text-center sm:grid-cols-4"
       >
-        {STATS.map((s) => (
+        {stats.items.map((s) => (
           <motion.div
             key={s.label}
             variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0, transition: { duration: 0.6 } } }}
