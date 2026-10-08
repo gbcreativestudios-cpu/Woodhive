@@ -1,0 +1,22 @@
+{
+  "eyebrow": "Our Process",
+  "heading": "From idea to masterpiece",
+  "steps": [
+    {
+      "title": "Tell us what you need",
+      "description": "Share your vision, spatial challenge, repair requirement, or event concept through our tailored inquiry forms."
+    },
+    {
+      "title": "We understand the project",
+      "description": "We analyze structural requirements, material compatibility, and functional goals to design a cohesive system."
+    },
+    {
+      "title": "We build with intention",
+      "description": "Crafted in our studio or executed on-site by experienced woodworkers and structural specialists with uncompromising rigor."
+    },
+    {
+      "title": "A finished environment",
+      "description": "You receive a refined, durable, and purposeful finished space, custom product, or event installation ready for life."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "eyebrow": "The people behind it",
+  "heading": "Our team",
+  "members": [
+    {
+      "img": "https://picsum.photos/seed/woodhive-member1/400/480",
+      "name": "Studio Lead",
+      "role": "Founder & Lead Craftsman"
+    },
+    {
+      "img": "https://picsum.photos/seed/woodhive-member2/400/480",
+      "name": "Project Manager",
+      "role": "Client & Site Coordination"
+    },
+    {
+      "img": "https://picsum.photos/seed/woodhive-member3/400/480",
+      "name": "Structural Specialist",
+      "role": "Renovation & Maintenance"
+    },
+    {
+      "img": "https://picsum.photos/seed/woodhive-member4/400/480",
+      "name": "Production Lead",
+      "role": "Wooden Products & Rentals"
+    }
+  ]
+}

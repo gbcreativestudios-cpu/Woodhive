@@ -1,0 +1,18 @@
+{
+  "slug": "wooden-products",
+  "formName": "products-inquiry",
+  "formUpload": false,
+  "eyebrow": "Service 02",
+  "title": "Wooden Products",
+  "navLabel": "Wooden Products",
+  "description": "Custom-built mobile carts, check-out stands, stage setups, acoustic panels, and other wood-driven creations engineered for your specific environment.",
+  "points": [
+    "Retail fixtures and mobile carts",
+    "Acoustic panels and stage builds",
+    "One-off furniture and product design"
+  ],
+  "img": "https://picsum.photos/seed/woodhive-svc-products/1200/800",
+  "galleryCategory": "Wooden Products",
+  "ctaLabel": "Need a custom wooden product?",
+  "hasProductsPicker": true
+}

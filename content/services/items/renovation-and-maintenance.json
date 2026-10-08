@@ -1,0 +1,18 @@
+{
+  "slug": "renovation-and-maintenance",
+  "formName": "renovation-inquiry",
+  "formUpload": true,
+  "eyebrow": "Service 01",
+  "title": "Renovation and Maintenance",
+  "navLabel": "Renovation & Maintenance",
+  "description": "Flexible renovation, repair, basement finishing and maintenance work for spaces that need structural improvement, fixing, or spatial elevation.",
+  "points": [
+    "Basement finishing and structural repair",
+    "Built-in shelving, cabinetry, and trim work",
+    "Ongoing maintenance contracts for commercial spaces"
+  ],
+  "img": "https://picsum.photos/seed/woodhive-svc-renovation/1200/800",
+  "galleryCategory": "Renovation & Maintenance",
+  "ctaLabel": "Need renovation or maintenance work?",
+  "hasProductsPicker": false
+}

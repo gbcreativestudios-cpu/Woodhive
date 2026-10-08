@@ -1,0 +1,13 @@
+{
+  "headingLine1": "Crafted in Wood.",
+  "headingLine2": "Defined by Elegance.",
+  "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
+  "primaryButtonLabel": "EXPLORE OUR WORK",
+  "secondaryButtonLabel": "START A PROJECT",
+  "backgroundImage": "https://picsum.photos/seed/woodhive-hero/1600/1100",
+  "carouselImages": [
+    "https://picsum.photos/seed/woodhive-hero-carousel-1/900/720",
+    "https://picsum.photos/seed/woodhive-hero-carousel-2/900/720",
+    "https://picsum.photos/seed/woodhive-hero-carousel-3/900/720"
+  ]
+}

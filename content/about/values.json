@@ -1,0 +1,21 @@
+{
+  "eyebrow": "What we stand for",
+  "heading": "How we work",
+  "items": [
+    {
+      "img": "https://picsum.photos/seed/woodhive-value1/500/500",
+      "title": "Craft over shortcuts",
+      "description": "Every joint, finish, and structural decision is made for durability first, appearance second \u2014 the two usually agree."
+    },
+    {
+      "img": "https://picsum.photos/seed/woodhive-value2/500/500",
+      "title": "Clarity before build",
+      "description": "We scope, measure, and confirm before a single cut is made, so there are no surprises mid-project."
+    },
+    {
+      "img": "https://picsum.photos/seed/woodhive-value3/500/500",
+      "title": "Built for real use",
+      "description": "Furniture gets sat on, arches get leaned against, basements get lived in \u2014 we build for that reality."
+    }
+  ]
+}

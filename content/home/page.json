@@ -1,0 +1,14 @@
+{
+  "sections": [
+    "hero",
+    "stats",
+    "intro",
+    "services",
+    "capabilitiesCta",
+    "process",
+    "selectedWork",
+    "faq",
+    "reviews",
+    "closingCta"
+  ]
+}

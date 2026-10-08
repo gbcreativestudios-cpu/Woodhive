@@ -1,0 +1,16 @@
+{
+  "heading": "Selected Work",
+  "linkLabel": "View portfolio gallery",
+  "items": [
+    {
+      "image": "https://picsum.photos/seed/woodhive-g1/700/560",
+      "title": "Monolith Dining Table",
+      "category": "PRODUCT"
+    },
+    {
+      "image": "https://picsum.photos/seed/woodhive-g2/700/560",
+      "title": "Staircase Restring",
+      "category": "MAINTENANCE"
+    }
+  ]
+}

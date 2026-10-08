@@ -1,0 +1,8 @@
+{
+  "items": [
+    { "value": 340, "suffix": "+", "label": "SUCCESSFUL PROJECTS" },
+    { "value": 10, "suffix": "+", "label": "TEAM MEMBERS" },
+    { "value": 75, "suffix": "+", "label": "SATISFIED CLIENTS" },
+    { "value": 100, "suffix": "%", "label": "CLIENT SATISFACTION" }
+  ]
+}

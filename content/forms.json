@@ -1,0 +1,62 @@
+{
+  "inquiryForm": {
+    "heading": "Tell us about your project",
+    "subheading": "Share a few details and we'll come back to you with next steps.",
+    "fields": [
+      { "name": "name", "label": "Full name", "type": "text", "required": true, "width": "half" },
+      { "name": "email", "label": "Email", "type": "email", "required": true, "width": "half" },
+      { "name": "phone", "label": "Phone (optional)", "type": "tel", "required": false, "width": "full" },
+      { "name": "message", "label": "Tell us what you need", "type": "textarea", "required": true, "width": "full" }
+    ],
+    "uploadLabel": "Reference photos (optional)",
+    "uploadPrompt": "Attach photos of the space",
+    "submitLabel": "Submit Inquiry",
+    "sendingLabel": "Sending…",
+    "errorMessage": "Something went wrong sending that. Please try again, or email us directly.",
+    "successHeading": "Inquiry received",
+    "successMessage": "We'll follow up within a week with next steps.",
+    "honeypotLabel": "Don't fill this out:"
+  },
+  "startProjectForm": {
+    "heading": "Start a project",
+    "subheading": "Not sure exactly what you need yet? Tell us the shape of it and we'll point you the right way.",
+    "fields": [
+      { "name": "name", "label": "Full name", "type": "text", "required": true, "width": "half" },
+      { "name": "email", "label": "Email", "type": "email", "required": true, "width": "half" },
+      { "name": "message", "label": "Tell us about it", "type": "textarea", "required": true, "width": "full" }
+    ],
+    "projectTypeLabel": "What are you starting?",
+    "projectTypePlaceholder": "Select one",
+    "notSureLabel": "Not sure yet",
+    "submitLabel": "Start the Conversation",
+    "sendingLabel": "Sending…",
+    "errorMessage": "Something went wrong sending that. Please try again, or email us directly.",
+    "successHeading": "Thanks — got it",
+    "successMessage": "We'll take a look and follow up within a week to talk it through.",
+    "honeypotLabel": "Don't fill this out:"
+  },
+  "reviewForm": {
+    "heading": "Leave a review",
+    "subheading": "Tell us how the project went. Reviews are checked before they appear on the site.",
+    "fields": [
+      { "name": "name", "label": "Your name", "type": "text", "required": true, "width": "half" },
+      { "name": "company", "label": "Company", "type": "text", "required": true, "width": "half" },
+      { "name": "position", "label": "Your position", "type": "text", "required": true, "width": "full" },
+      { "name": "review", "label": "Your review", "type": "textarea", "required": true, "width": "full" }
+    ],
+    "photoLabel": "Your photo (optional)",
+    "photoPrompt": "Attach a photo of yourself",
+    "photoTooLarge": "That photo is over 5MB. Please choose a smaller one.",
+    "submitLabel": "Send Review",
+    "sendingLabel": "Sending…",
+    "errorMessage": "Something went wrong sending that. Please try again in a moment.",
+    "successHeading": "Thank you!",
+    "successMessage": "Your review has been received. It will appear on the site once we've approved it.",
+    "honeypotLabel": "Don't fill this out:"
+  },
+  "productsPicker": {
+    "label": "Which products are you interested in?",
+    "notListedLabel": "Not listed",
+    "otherPlaceholder": "What product did you have in mind?"
+  }
+}

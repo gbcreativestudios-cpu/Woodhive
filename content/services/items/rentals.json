@@ -1,0 +1,18 @@
+{
+  "slug": "rentals",
+  "formName": "rentals-inquiry",
+  "formUpload": false,
+  "eyebrow": "Service 03",
+  "title": "Rentals",
+  "navLabel": "Rentals",
+  "description": "Museum-grade event structures, ceremonial arches, backdrops, and modular pieces available to rent for weddings and celebrations.",
+  "points": [
+    "Ceremonial arches and backdrops",
+    "Modular staging and lounge structures",
+    "Delivery, setup, and teardown included"
+  ],
+  "img": "https://picsum.photos/seed/woodhive-svc-rentals/1200/800",
+  "galleryCategory": "Rentals",
+  "ctaLabel": "Need something for an event?",
+  "hasProductsPicker": false
+}
