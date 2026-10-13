@@ -66,6 +66,11 @@ collections:
           - { label: "Primary Button Label", name: "primaryButtonLabel", widget: "string" }
           - { label: "Secondary Button Label", name: "secondaryButtonLabel", widget: "string" }
           - { label: "Background Image", name: "backgroundImage", widget: "image" }
+          - { label: "Overlay Colour", name: "overlayColor", widget: "color", default: "#3D2209", hint: "Colour of the gradient laid over the background image." }
+          - { label: "Overlay Opacity - Bottom (%)", name: "overlayBottomOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 100, hint: "0 = fully transparent, 100 = solid colour." }
+          - { label: "Overlay Opacity - Middle (%)", name: "overlayMiddleOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 60 }
+          - { label: "Overlay Opacity - Top (%)", name: "overlayTopOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 40 }
+          - { label: "Overlay Middle Position (% up from bottom)", name: "overlayMiddlePosition", widget: "number", value_type: "int", min: 5, max: 95, default: 50, hint: "Where the middle opacity sits. Lower = overlay fades out sooner." }
           - label: "Carousel Images"
             name: "carouselImages"
             widget: "list"

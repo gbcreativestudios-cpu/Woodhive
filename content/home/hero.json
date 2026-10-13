@@ -4,10 +4,15 @@
   "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
   "primaryButtonLabel": "EXPLORE OUR WORK",
   "secondaryButtonLabel": "START A PROJECT",
-  "backgroundImage": "/images/uploads/wood1.jpg",
+  "backgroundImage": "https://picsum.photos/seed/woodhive-hero/1600/1100",
   "carouselImages": [
-    "/images/uploads/luxury_interior_with_wood_panels_20260911212822.jpeg",
-    "/images/uploads/wooden_mobile_retail_cart_20260911212828.jpeg",
-    "/images/uploads/luxury_interior_with_wood_panels_20260911103707.jpeg"
-  ]
+    "https://picsum.photos/seed/woodhive-hero-carousel-1/900/720",
+    "https://picsum.photos/seed/woodhive-hero-carousel-2/900/720",
+    "https://picsum.photos/seed/woodhive-hero-carousel-3/900/720"
+  ],
+  "overlayColor": "#3D2209",
+  "overlayBottomOpacity": 100,
+  "overlayMiddleOpacity": 60,
+  "overlayTopOpacity": 40,
+  "overlayMiddlePosition": 50
 }

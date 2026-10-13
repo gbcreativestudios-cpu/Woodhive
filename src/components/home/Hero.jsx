@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { OVERLAY, SHOW_HERO_CAROUSEL_ON_MOBILE } from "../../lib/images";
+import { buildHeroOverlay, SHOW_HERO_CAROUSEL_ON_MOBILE } from "../../lib/images";
 import Button, { ButtonRow } from "../ui/Button";
 import Navbar from "../layout/Navbar";
 import HeroCarousel from "./HeroCarousel";
@@ -28,7 +28,7 @@ export default function Hero() {
   return (
     <section className={`relative overflow-hidden ${heroMinH}`}>
       <img src={hero.backgroundImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0" style={{ background: OVERLAY.hero }} />
+      <div className="absolute inset-0" style={{ background: buildHeroOverlay(hero) }} />
       <Navbar />
 
       {/* Back to a single max-w-[1040px] box with its own px-6 padding —
