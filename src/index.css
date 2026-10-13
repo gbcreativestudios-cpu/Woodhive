@@ -28,9 +28,13 @@
 
 html {
   scroll-behavior: smooth;
+  /* Reveal animations slide in from +/-32px; clip so nothing can be dragged sideways on phones. */
+  overflow-x: clip;
+  overscroll-behavior-x: none;
 }
 
 body {
+  overflow-x: clip;
   background-color: var(--color-cream-50);
   color: var(--color-ink-900);
   font-family: var(--font-sans);
