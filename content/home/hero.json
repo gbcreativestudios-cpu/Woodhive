@@ -1,11 +1,11 @@
 {
   "primaryButtonLabel": "EXPLORE OUR WORK",
-  "overlayTopOpacity": 15,
+  "overlayTopOpacity": 20,
   "overlayMiddleOpacity": 50,
   "backgroundImage": "/images/uploads/wood1.jpg",
   "secondaryButtonLabel": "START A PROJECT",
   "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
-  "overlayMiddlePosition": 22,
+  "overlayMiddlePosition": 35,
   "overlayBottomOpacity": 100,
   "overlayColor": "#3D2209",
   "carouselImages": [
