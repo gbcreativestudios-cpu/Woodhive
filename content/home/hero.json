@@ -1,18 +1,18 @@
 {
-  "headingLine1": "Crafted in Wood.",
-  "headingLine2": "Defined by Elegance.",
-  "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
   "primaryButtonLabel": "EXPLORE OUR WORK",
+  "overlayTopOpacity": 15,
+  "overlayMiddleOpacity": 50,
+  "backgroundImage": "/images/uploads/wood1.jpg",
   "secondaryButtonLabel": "START A PROJECT",
-  "backgroundImage": "https://picsum.photos/seed/woodhive-hero/1600/1100",
-  "carouselImages": [
-    "https://picsum.photos/seed/woodhive-hero-carousel-1/900/720",
-    "https://picsum.photos/seed/woodhive-hero-carousel-2/900/720",
-    "https://picsum.photos/seed/woodhive-hero-carousel-3/900/720"
-  ],
-  "overlayColor": "#3D2209",
+  "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
+  "overlayMiddlePosition": 22,
   "overlayBottomOpacity": 100,
-  "overlayMiddleOpacity": 60,
-  "overlayTopOpacity": 40,
-  "overlayMiddlePosition": 50
+  "overlayColor": "#3D2209",
+  "carouselImages": [
+    "/images/uploads/luxury_interior_with_wood_panels_20260911103707.jpeg",
+    "/images/uploads/luxury_interior_with_wood_panels_20260911212822.jpeg",
+    "/images/uploads/wooden_mobile_retail_cart_20260911212828.jpeg"
+  ],
+  "headingLine1": "Crafted in Wood.",
+  "headingLine2": "Defined by Elegance."
 }
