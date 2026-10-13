@@ -6,6 +6,7 @@ import ReviewCard from "./ReviewCard";
 import ReviewForm from "./ReviewForm";
 import { REVIEWS } from "../../data/reviews";
 import section from "../../../content/reviews/section.json";
+import SectionLabel from "../ui/SectionLabel";
 
 function useMediaQuery(query) {
   return useSyncExternalStore(
@@ -43,8 +44,8 @@ export default function Reviews() {
     <section className="bg-sand-100 px-6 py-16 lg:py-20">
       <div className="mx-auto max-w-[1040px]">
         <Reveal className="mx-auto max-w-xl text-center">
-          <p className="text-[13.5px] font-bold text-orange-500">{section.eyebrow}</p>
-          <h2 className="mt-2.5 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{section.heading}</h2>
+          <SectionLabel id="homeReviews" fallback={section.eyebrow} />
+          <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{section.heading}</h2>
           <p className="mx-auto mt-3.5 max-w-md text-sm leading-relaxed text-[#5b4636]">{section.paragraph}</p>
         </Reveal>
       </div>

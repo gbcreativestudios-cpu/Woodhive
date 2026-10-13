@@ -14,6 +14,100 @@ collections:
   - name: "settings"
     label: "Site Settings"
     files:
+      - file: "content/settings/labels.json"
+        label: "Section Labels (small text above titles)"
+        name: "labels"
+        fields:
+          - label: "Home - Core services intro"
+            name: "homeServices"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Home - Capabilities banner"
+            name: "homeCapabilities"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Home - Process"
+            name: "homeProcess"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Home - Reviews"
+            name: "homeReviews"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Home - FAQ teaser"
+            name: "homeFaq"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "About page - top banner"
+            name: "aboutHero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "About page - Our story"
+            name: "aboutStory"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "About page - Values"
+            name: "aboutValues"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "About page - Team"
+            name: "aboutTeam"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Gallery page - top banner"
+            name: "galleryHero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "FAQ page - top banner"
+            name: "faqHero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Service pages - \"Work we've done\""
+            name: "serviceWorkDone"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
+              - { label: "Text", name: "text", widget: "string", required: false }
+          - label: "Service pages - tag in the top banner (e.g. \"Service 01\"); its text is edited per service under Services"
+            name: "serviceDetailHero"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Show", name: "show", widget: "boolean", default: true }
       - file: "content/settings/general.json"
         label: "General"
         name: "general"
@@ -99,13 +193,11 @@ collections:
         label: "Services Section Heading"
         name: "servicesIntro"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
       - file: "content/home/process.json"
         label: "Process Section"
         name: "process"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - label: "Steps"
             name: "steps"
@@ -130,7 +222,6 @@ collections:
         label: "Capabilities CTA"
         name: "capabilitiesCta"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Paragraph", name: "paragraph", widget: "text" }
           - { label: "Button Label", name: "buttonLabel", widget: "string" }
@@ -138,7 +229,6 @@ collections:
         label: "FAQ Teaser Section"
         name: "faqTeaser"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Paragraph", name: "paragraph", widget: "text" }
           - { label: "Link Label", name: "linkLabel", widget: "string" }
@@ -146,7 +236,6 @@ collections:
         label: "Reviews Section"
         name: "reviewsSection"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Paragraph", name: "paragraph", widget: "text" }
           - { label: "\"Leave a review\" Button Label", name: "leaveReviewLabel", widget: "string" }
@@ -171,7 +260,6 @@ collections:
         label: "Hero"
         name: "hero"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "text" }
           - { label: "Image", name: "image", widget: "image" }
@@ -180,7 +268,6 @@ collections:
         name: "story"
         fields:
           - { label: "Image", name: "image", widget: "image" }
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - { label: "Paragraph 1", name: "paragraph1", widget: "text" }
           - { label: "Paragraph 2", name: "paragraph2", widget: "text" }
@@ -188,7 +275,6 @@ collections:
         label: "Values Section"
         name: "values"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - label: "Values"
             name: "items"
@@ -201,7 +287,6 @@ collections:
         label: "Team Section"
         name: "team"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heading", widget: "string" }
           - label: "Members"
             name: "members"
@@ -227,7 +312,6 @@ collections:
         label: "Hero"
         name: "hero"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
       - file: "content/gallery/closing-cta.json"
@@ -255,7 +339,6 @@ collections:
         label: "Hero"
         name: "hero"
         fields:
-          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
       - file: "content/faq/closing-cta.json"
@@ -298,7 +381,6 @@ collections:
         label: "Static Labels"
         name: "detailPageCopy"
         fields:
-          - { label: "\"Work we've done\" eyebrow", name: "workDoneEyebrow", widget: "string" }
           - { label: "CTA paragraph", name: "ctaParagraph", widget: "text" }
           - { label: "\"Looking for something else?\" label", name: "otherServicesLabel", widget: "string" }
 

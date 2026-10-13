@@ -1,12 +1,13 @@
 import Reveal from "../ui/Reveal";
 import team from "../../../content/about/team.json";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function Team() {
   return (
     <section className="mx-auto max-w-[1040px] px-6 py-16 lg:py-20">
       <Reveal className="max-w-md">
-        <p className="text-[13.5px] font-bold text-orange-500">{team.eyebrow}</p>
-        <h2 className="mt-2.5 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{team.heading}</h2>
+        <SectionLabel id="aboutTeam" fallback={team.eyebrow} />
+        <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{team.heading}</h2>
       </Reveal>
       <div className="mt-10 grid grid-cols-2 gap-5 lg:grid-cols-4">
         {team.members.map((m, i) => (

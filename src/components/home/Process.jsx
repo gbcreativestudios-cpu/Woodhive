@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Reveal from "../ui/Reveal";
 import process from "../../../content/home/process.json";
+import SectionLabel from "../ui/SectionLabel";
 
 /**
  * Each card sticks at an incrementing offset so the cards pile into a stack
@@ -52,8 +53,8 @@ export default function Process() {
     <section className="bg-brown-950 py-16 lg:py-24">
       <div className="mx-auto max-w-[900px] px-6">
         <Reveal className="text-center">
-          <p className="text-[13.5px] font-bold text-gold-400">{process.eyebrow}</p>
-          <h2 className="mt-2.5 font-display text-3xl text-cream-50 lg:text-4xl">
+          <SectionLabel id="homeProcess" fallback={process.eyebrow} className="text-gold-400" />
+          <h2 className="mt-2.5 first:mt-0 font-display text-3xl text-cream-50 lg:text-4xl">
             {process.heading}
           </h2>
         </Reveal>

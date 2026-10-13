@@ -5,12 +5,13 @@ import ClosingCTA from "../components/home/ClosingCTA";
 import { FAQ_GROUPS } from "../data/faqs";
 import hero from "../../content/faq/hero.json";
 import closing from "../../content/faq/closing-cta.json";
+import { getLabel } from "../data/labels";
 
 export default function FAQ() {
   return (
     <>
       <PageHero
-        eyebrow={hero.eyebrow}
+        eyebrow={getLabel("faqHero", hero.eyebrow)}
         title={hero.title}
         image={hero.image}
         minH="min-h-[42vh]"

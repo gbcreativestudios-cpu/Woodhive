@@ -7,6 +7,8 @@ import { WORKS } from "../data/gallery";
 import { useInquiryModal } from "../context/InquiryModalContext";
 import copy from "../../content/services/detail-page-copy.json";
 import closing from "../../content/services/closing-cta.json";
+import SectionLabel from "../components/ui/SectionLabel";
+import { labelVisible } from "../data/labels";
 
 export default function ServiceDetail() {
   const { slug } = useParams();
@@ -21,7 +23,7 @@ export default function ServiceDetail() {
   return (
     <>
       <PageHero
-        eyebrow={service.eyebrow}
+        eyebrow={labelVisible("serviceDetailHero") ? service.eyebrow : null}
         title={service.title}
         subtitle={service.description}
         image={service.img}
@@ -47,8 +49,8 @@ export default function ServiceDetail() {
         <section className="bg-sand-100 px-6 py-16">
           <div className="mx-auto max-w-[1040px]">
             <Reveal>
-              <p className="text-[13.5px] font-bold text-orange-500">{copy.workDoneEyebrow}</p>
-              <h2 className="mt-2.5 font-display text-[clamp(24px,3vw,32px)] text-brown-900">
+              <SectionLabel id="serviceWorkDone" fallback={copy.workDoneEyebrow} />
+              <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(24px,3vw,32px)] text-brown-900">
                 {service.title} in practice
               </h2>
             </Reveal>

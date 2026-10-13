@@ -2,6 +2,7 @@ import Reveal from "../ui/Reveal";
 import Button from "../ui/Button";
 import { useInquiryModal } from "../../context/InquiryModalContext";
 import content from "../../../content/home/capabilities-cta.json";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function CapabilitiesCTA() {
   const { openStartProject } = useInquiryModal();
@@ -9,8 +10,8 @@ export default function CapabilitiesCTA() {
   return (
     <section className="bg-sand-100 px-6 py-16 text-center">
       <Reveal variant="scale" className="mx-auto max-w-xl">
-        <p className="text-[13.5px] font-bold text-orange-500">{content.eyebrow}</p>
-        <h2 className="mt-2.5 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">
+        <SectionLabel id="homeCapabilities" fallback={content.eyebrow} />
+        <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">
           {content.heading}
         </h2>
         <p className="mx-auto mt-3.5 max-w-md text-sm leading-relaxed text-[#5b4636]">

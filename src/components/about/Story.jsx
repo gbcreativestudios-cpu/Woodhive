@@ -1,5 +1,6 @@
 import Reveal from "../ui/Reveal";
 import story from "../../../content/about/story.json";
+import SectionLabel from "../ui/SectionLabel";
 
 export default function Story() {
   return (
@@ -12,8 +13,8 @@ export default function Story() {
         />
       </Reveal>
       <Reveal variant="right">
-        <p className="text-[13.5px] font-bold text-orange-500">{story.eyebrow}</p>
-        <h2 className="mt-2.5 font-display text-[clamp(26px,3.4vw,36px)] leading-tight text-brown-900">
+        <SectionLabel id="aboutStory" fallback={story.eyebrow} />
+        <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] leading-tight text-brown-900">
           {story.heading}
         </h2>
         <p className="mt-4 text-[14.5px] leading-[1.7] text-[#5b4636]">{story.paragraph1}</p>

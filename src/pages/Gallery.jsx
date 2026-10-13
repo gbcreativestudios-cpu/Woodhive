@@ -3,12 +3,13 @@ import GalleryGrid from "../components/gallery/GalleryGrid";
 import ClosingCTA from "../components/home/ClosingCTA";
 import hero from "../../content/gallery/hero.json";
 import closing from "../../content/gallery/closing-cta.json";
+import { getLabel } from "../data/labels";
 
 export default function Gallery() {
   return (
     <>
       <PageHero
-        eyebrow={hero.eyebrow}
+        eyebrow={getLabel("galleryHero", hero.eyebrow)}
         title={hero.title}
         image={hero.image}
         minH="min-h-[46vh]"
