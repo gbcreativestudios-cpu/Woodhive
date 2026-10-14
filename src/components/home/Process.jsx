@@ -30,12 +30,12 @@ function StackCard({ step, index, total }) {
       >
         <div className="flex items-baseline gap-4">
           <span className="font-display text-2xl text-orange-500">{String(index + 1).padStart(2, "0")}</span>
-          <span className="text-[11px] font-semibold tracking-wide text-brown-900/40">
+          <span className="t-micro font-semibold tracking-wide text-brown-900/40">
             STEP {index + 1} OF {total}
           </span>
         </div>
-        <h3 className="mt-3 font-display text-xl text-brown-900 sm:text-2xl">{step.title}</h3>
-        <p className="mt-3 max-w-xl text-sm leading-relaxed text-brown-900/60">{step.description}</p>
+        <h3 className="mt-3 t-step text-brown-900">{step.title}</h3>
+        <p className="mt-3 max-w-xl t-body leading-relaxed text-brown-900/60">{step.description}</p>
 
         {/* Scrim darkens cards as they recede into the stack */}
         <motion.div
@@ -54,7 +54,7 @@ export default function Process() {
       <div className="mx-auto max-w-[900px] px-6">
         <Reveal className="text-center">
           <SectionLabel id="homeProcess" fallback={process.eyebrow} className="text-gold-400" />
-          <h2 className="mt-2.5 first:mt-0 font-display text-3xl text-cream-50 lg:text-4xl">
+          <h2 className="mt-2.5 first:mt-0 t-process text-cream-50">
             {process.heading}
           </h2>
         </Reveal>

@@ -1,0 +1,117 @@
+{
+  "styles": {
+    "heroHeading": {
+      "sizePhone": 32,
+      "sizeDesktop": 38,
+      "sizeTablet": 48,
+      "weight": "600"
+    },
+    "pageHeading": {
+      "sizePhone": 32,
+      "sizeDesktop": 48,
+      "weight": "600"
+    },
+    "sectionHeading": {
+      "sizePhone": 26,
+      "sizeDesktop": 36,
+      "weight": "600"
+    },
+    "introHeading": {
+      "sizePhone": 26,
+      "sizeDesktop": 40,
+      "weight": "600"
+    },
+    "processHeading": {
+      "sizePhone": 30,
+      "sizeDesktop": 36,
+      "weight": "600"
+    },
+    "serviceHeading": {
+      "sizePhone": 24,
+      "sizeDesktop": 32,
+      "weight": "600"
+    },
+    "largeCardHeading": {
+      "sizePhone": 22,
+      "sizeDesktop": 22,
+      "weight": "600"
+    },
+    "cardHeading": {
+      "sizePhone": 19,
+      "sizeDesktop": 19,
+      "weight": "600"
+    },
+    "stepHeading": {
+      "sizePhone": 20,
+      "sizeDesktop": 24,
+      "weight": "600"
+    },
+    "smallHeading": {
+      "sizePhone": 18,
+      "sizeDesktop": 18,
+      "weight": "600"
+    },
+    "miniHeading": {
+      "sizePhone": 16,
+      "sizeDesktop": 16,
+      "weight": "600"
+    },
+    "statNumber": {
+      "sizePhone": 30,
+      "sizeDesktop": 44,
+      "weight": "700"
+    },
+    "label": {
+      "sizePhone": 13.5,
+      "sizeDesktop": 13.5,
+      "weight": "700"
+    },
+    "bannerText": {
+      "sizePhone": 15,
+      "sizeDesktop": 15
+    },
+    "bodyLarge": {
+      "sizePhone": 14.5,
+      "sizeDesktop": 14.5
+    },
+    "body": {
+      "sizePhone": 14,
+      "sizeDesktop": 14
+    },
+    "small": {
+      "sizePhone": 13.5,
+      "sizeDesktop": 13.5
+    },
+    "tiny": {
+      "sizePhone": 12.5,
+      "sizeDesktop": 12.5
+    },
+    "micro": {
+      "sizePhone": 12,
+      "sizeDesktop": 12
+    },
+    "button": {
+      "sizePhone": 14,
+      "sizeDesktop": 14,
+      "weight": "700"
+    },
+    "nav": {
+      "sizePhone": 14,
+      "sizeDesktop": 14
+    },
+    "footer": {
+      "sizePhone": 13.5,
+      "sizeDesktop": 13.5
+    }
+  },
+  "logos": {
+    "navLogo": {
+      "heightPhone": 28,
+      "heightDesktop": 28
+    },
+    "footerLogo": {
+      "heightPhone": 64,
+      "heightDesktop": 64
+    }
+  }
+}

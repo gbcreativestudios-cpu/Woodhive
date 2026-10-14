@@ -15,7 +15,7 @@ export default function JumpNav() {
           <button
             key={it.id}
             onClick={() => jump(it.id)}
-            className="whitespace-nowrap text-[13.5px] font-semibold text-brown-900 transition-colors hover:text-orange-500"
+            className="whitespace-nowrap t-small font-semibold text-brown-900 transition-colors hover:text-orange-500"
           >
             {it.label}
           </button>

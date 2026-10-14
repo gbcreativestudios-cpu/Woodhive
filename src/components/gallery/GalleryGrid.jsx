@@ -20,7 +20,7 @@ export default function GalleryGrid() {
                 setActive(cat);
                 setLightboxIndex(null);
               }}
-              className={`rounded-lg border px-4 py-2.5 text-[13px] font-semibold transition-all ${
+              className={`rounded-lg border px-4 py-2.5 t-small font-semibold transition-all ${
                 isActive
                   ? "border-brown-900 bg-brown-900 text-cream-50"
                   : "border-sand-100 text-brown-900 hover:border-brown-900/40"
@@ -56,8 +56,8 @@ export default function GalleryGrid() {
                 />
               </button>
               <figcaption>
-                <h3 className="mt-3 font-display text-[16.5px] text-brown-900">{w.title}</h3>
-                <p className="mt-1 text-[11.5px] font-bold uppercase tracking-wide text-orange-500">
+                <h3 className="mt-3 t-mini text-brown-900">{w.title}</h3>
+                <p className="mt-1 t-micro font-bold uppercase tracking-wide text-orange-500">
                   {w.category}
                 </p>
               </figcaption>

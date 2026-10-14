@@ -7,11 +7,11 @@
  * grid, then any special block the form adds (products checklist, project-type
  * select, photo upload), then long-answer fields (textarea).
  */
-export const labelCls = "mb-1.5 block text-[12.5px] font-semibold text-brown-900";
+export const labelCls = "mb-1.5 block t-tiny font-semibold text-brown-900";
 export const inputCls =
-  "h-11 w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500";
+  "h-11 w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 t-body text-ink-900 outline-none transition-colors focus:border-orange-500";
 export const textareaCls =
-  "w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 py-2.5 text-sm text-ink-900 outline-none transition-colors focus:border-orange-500";
+  "w-full rounded-lg border border-sand-100 bg-cream-50 px-3.5 py-2.5 t-body text-ink-900 outline-none transition-colors focus:border-orange-500";
 
 export const isLong = (f) => f.type === "textarea";
 

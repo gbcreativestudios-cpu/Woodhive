@@ -35,7 +35,7 @@ export default function ServiceDetail() {
         <Reveal>
           <ul className="inline-flex flex-col gap-2.5 text-left">
             {service.points.map((p) => (
-              <li key={p} className="flex items-start gap-2.5 text-[14.5px] text-[#5b4636]">
+              <li key={p} className="flex items-start gap-2.5 t-body-lg text-[#5b4636]">
                 <span className="mt-[8px] h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
                 {p}
               </li>
@@ -50,7 +50,7 @@ export default function ServiceDetail() {
           <div className="mx-auto max-w-[1040px]">
             <Reveal>
               <SectionLabel id="serviceWorkDone" fallback={copy.workDoneEyebrow} />
-              <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(24px,3vw,32px)] text-brown-900">
+              <h2 className="mt-2.5 first:mt-0 t-service text-brown-900">
                 {service.title} in practice
               </h2>
             </Reveal>
@@ -64,7 +64,7 @@ export default function ServiceDetail() {
                       loading="lazy"
                       className="h-56 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                     />
-                    <h3 className="mt-3 font-display text-[16px] text-brown-900">{w.title}</h3>
+                    <h3 className="mt-3 t-mini text-brown-900">{w.title}</h3>
                   </Link>
                 </RevealItem>
               ))}
@@ -76,15 +76,15 @@ export default function ServiceDetail() {
       {/* Service-specific CTA → pops this service's form */}
       <section className="px-6 py-16 text-center">
         <Reveal variant="scale" className="mx-auto max-w-lg">
-          <h2 className="font-display text-[clamp(24px,3vw,32px)] text-brown-900">
+          <h2 className="t-service text-brown-900">
             {service.ctaLabel}
           </h2>
-          <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#5b4636]">
+          <p className="mx-auto mt-3 max-w-sm t-body leading-relaxed text-[#5b4636]">
             {copy.ctaParagraph}
           </p>
           <button
             onClick={() => open(service.slug)}
-            className="mt-6 inline-flex items-center justify-center rounded-lg bg-orange-500 px-7 py-3.5 text-sm font-bold text-cream-50 transition-transform hover:scale-[1.02] hover:bg-orange-400"
+            className="mt-6 inline-flex items-center justify-center rounded-lg bg-orange-500 px-7 py-3.5 t-button text-cream-50 transition-transform hover:scale-[1.02] hover:bg-orange-400"
           >
             Request {service.title}
           </button>
@@ -94,7 +94,7 @@ export default function ServiceDetail() {
       {/* Cross-links to the other two services */}
       <section className="border-t border-sand-100 px-6 py-14">
         <div className="mx-auto max-w-[1040px]">
-          <p className="text-center text-[13px] font-semibold text-brown-900/50">
+          <p className="text-center t-small font-semibold text-brown-900/50">
             {copy.otherServicesLabel}
           </p>
           <div className="mt-5 flex flex-wrap justify-center gap-3">
@@ -102,7 +102,7 @@ export default function ServiceDetail() {
               <Link
                 key={s.slug}
                 to={`/services/${s.slug}`}
-                className="rounded-lg border border-sand-100 px-5 py-2.5 text-[13.5px] font-semibold text-brown-900 transition-colors hover:border-orange-500 hover:text-orange-500"
+                className="rounded-lg border border-sand-100 px-5 py-2.5 t-small font-semibold text-brown-900 transition-colors hover:border-orange-500 hover:text-orange-500"
               >
                 {s.navLabel}
               </Link>

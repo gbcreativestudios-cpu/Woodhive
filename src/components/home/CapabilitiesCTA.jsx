@@ -11,10 +11,10 @@ export default function CapabilitiesCTA() {
     <section className="bg-sand-100 px-6 py-16 text-center">
       <Reveal variant="scale" className="mx-auto max-w-xl">
         <SectionLabel id="homeCapabilities" fallback={content.eyebrow} />
-        <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">
+        <h2 className="mt-2.5 first:mt-0 t-section text-brown-900">
           {content.heading}
         </h2>
-        <p className="mx-auto mt-3.5 max-w-md text-sm leading-relaxed text-[#5b4636]">
+        <p className="mx-auto mt-3.5 max-w-md t-body leading-relaxed text-[#5b4636]">
           {content.paragraph}
         </p>
         <div className="mt-6 flex justify-center">

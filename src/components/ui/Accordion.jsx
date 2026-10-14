@@ -14,7 +14,7 @@ export default function Accordion({ items, defaultOpen = -1 }) {
           <Reveal key={f.q} delay={i * 0.04}>
             <button
               onClick={() => setOpen(isOpen ? -1 : i)}
-              className="flex w-full items-center justify-between gap-4 rounded-2xl bg-brown-900 px-6 py-5 text-left text-[14.5px] font-medium text-cream-50 transition-colors hover:bg-brown-800"
+              className="flex w-full items-center justify-between gap-4 rounded-2xl bg-brown-900 px-6 py-5 text-left t-body-lg font-medium text-cream-50 transition-colors hover:bg-brown-800"
               aria-expanded={isOpen}
             >
               <span>{f.q}</span>
@@ -31,7 +31,7 @@ export default function Accordion({ items, defaultOpen = -1 }) {
                   transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 py-5 text-sm leading-relaxed text-[#5b4636]">{f.a}</p>
+                  <p className="px-6 py-5 t-body leading-relaxed text-[#5b4636]">{f.a}</p>
                 </motion.div>
               )}
             </AnimatePresence>

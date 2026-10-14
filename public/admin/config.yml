@@ -14,6 +14,246 @@ collections:
   - name: "settings"
     label: "Site Settings"
     files:
+      - file: "content/settings/typography.json"
+        label: "Typography (font sizes and logo sizes)"
+        name: "typography"
+        fields:
+          - label: "Text styles"
+            name: "styles"
+            widget: "object"
+            hint: "Every text style on the site, in Inter. Change a size and publish - the new size is used everywhere that style appears. The default for each is in its label. Sizes between phone and desktop scale smoothly."
+            fields:
+            - label: "Headings: Hero heading (home page)"
+              name: "heroHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "The big title at the top of the home page."
+              fields:
+                - { label: "Size on phones (px) - default 32", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 32 }
+                - { label: "Size on tablets (px) - default 48", name: "sizeTablet", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 48 }
+                - { label: "Size on desktop (px) - default 38", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 38 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Page banner heading"
+              name: "pageHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Title in the banner of About, Gallery, FAQ and each service page."
+              fields:
+                - { label: "Size on phones (px) - default 32", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 32 }
+                - { label: "Size on desktop (px) - default 48", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 48 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Section heading"
+              name: "sectionHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Main title of most sections (Services, Reviews, FAQ, Values, Team, Story, closing banner...)."
+              fields:
+                - { label: "Size on phones (px) - default 26", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 26 }
+                - { label: "Size on desktop (px) - default 36", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 36 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Home intro heading"
+              name: "introHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Heading of the intro block on the home page."
+              fields:
+                - { label: "Size on phones (px) - default 26", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 26 }
+                - { label: "Size on desktop (px) - default 40", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 40 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Process section heading"
+              name: "processHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Heading of the dark Process section."
+              fields:
+                - { label: "Size on phones (px) - default 30", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 30 }
+                - { label: "Size on desktop (px) - default 36", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 36 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Service page section heading"
+              name: "serviceHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Headings inside service pages."
+              fields:
+                - { label: "Size on phones (px) - default 24", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 24 }
+                - { label: "Size on desktop (px) - default 32", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 32 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Large card heading"
+              name: "largeCardHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Service card titles on the home page, group titles on the FAQ page."
+              fields:
+                - { label: "Size on phones (px) - default 22", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 22 }
+                - { label: "Size on desktop (px) - default 22", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 22 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Card / form heading"
+              name: "cardHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Popup form titles, Values card titles."
+              fields:
+                - { label: "Size on phones (px) - default 19", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 19 }
+                - { label: "Size on desktop (px) - default 19", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 19 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Process step title"
+              name: "stepHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Titles of the numbered process steps."
+              fields:
+                - { label: "Size on phones (px) - default 20", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 20 }
+                - { label: "Size on desktop (px) - default 24", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 24 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Small heading"
+              name: "smallHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Project titles in Selected Work and the gallery pop-up, form success titles."
+              fields:
+                - { label: "Size on phones (px) - default 18", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 18 }
+                - { label: "Size on desktop (px) - default 18", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 18 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Mini heading"
+              name: "miniHeading"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Gallery grid titles, team member names, project titles on service pages."
+              fields:
+                - { label: "Size on phones (px) - default 16", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 16 }
+                - { label: "Size on desktop (px) - default 16", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 16 }
+                - { label: "Weight - default 600", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "600" }
+            - label: "Headings: Stats numbers"
+              name: "statNumber"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "The big numbers in the stats strip."
+              fields:
+                - { label: "Size on phones (px) - default 30", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 30 }
+                - { label: "Size on desktop (px) - default 44", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 44 }
+                - { label: "Weight - default 700", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "700" }
+            - label: "Text: Section label (small text above titles)"
+              name: "label"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "The small coloured line above section titles, and footer column titles."
+              fields:
+                - { label: "Size on phones (px) - default 13.5", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 13.5 }
+                - { label: "Size on desktop (px) - default 13.5", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 13.5 }
+                - { label: "Weight - default 700", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "700" }
+            - label: "Text: Banner paragraph"
+              name: "bannerText"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Paragraph under the hero and page banner titles."
+              fields:
+                - { label: "Size on phones (px) - default 15", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 15 }
+                - { label: "Size on desktop (px) - default 15", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 15 }
+            - label: "Text: Body text (large)"
+              name: "bodyLarge"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Story paragraphs, intro paragraph, review quotes."
+              fields:
+                - { label: "Size on phones (px) - default 14.5", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14.5 }
+                - { label: "Size on desktop (px) - default 14.5", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14.5 }
+            - label: "Text: Body text"
+              name: "body"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Most paragraphs and card descriptions, FAQ answers, form fields."
+              fields:
+                - { label: "Size on phones (px) - default 14", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14 }
+                - { label: "Size on desktop (px) - default 14", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14 }
+            - label: "Text: Small text"
+              name: "small"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Lists, captions, form hints and messages, dropdown menu items."
+              fields:
+                - { label: "Size on phones (px) - default 13.5", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 13.5 }
+                - { label: "Size on desktop (px) - default 13.5", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 13.5 }
+            - label: "Text: Tiny text"
+              name: "tiny"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Form field labels, review bylines, stat captions, team roles."
+              fields:
+                - { label: "Size on phones (px) - default 12.5", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 12.5 }
+                - { label: "Size on desktop (px) - default 12.5", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 12.5 }
+            - label: "Text: Micro text"
+              name: "micro"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Footer copyright line, category tags, photo captions."
+              fields:
+                - { label: "Size on phones (px) - default 12", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 12 }
+                - { label: "Size on desktop (px) - default 12", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 12 }
+            - label: "Buttons and navigation: Button text"
+              name: "button"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "All buttons, including form submit buttons."
+              fields:
+                - { label: "Size on phones (px) - default 14", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14 }
+                - { label: "Size on desktop (px) - default 14", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14 }
+                - { label: "Weight - default 700", name: "weight", widget: "select", options: [{ label: "Regular (400)", value: "400" }, { label: "Medium (500)", value: "500" }, { label: "Semibold (600)", value: "600" }, { label: "Bold (700)", value: "700" }, { label: "Extra bold (800)", value: "800" }], default: "700" }
+            - label: "Buttons and navigation: Navigation links"
+              name: "nav"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Links in the top navigation bar and mobile menu."
+              fields:
+                - { label: "Size on phones (px) - default 14", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14 }
+                - { label: "Size on desktop (px) - default 14", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 14 }
+            - label: "Buttons and navigation: Footer text"
+              name: "footer"
+              widget: "object"
+              collapsed: true
+              summary: "{{fields.sizeDesktop}}px desktop"
+              hint: "Link lists and column titles in the footer."
+              fields:
+                - { label: "Size on phones (px) - default 13.5", name: "sizePhone", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 13.5 }
+                - { label: "Size on desktop (px) - default 13.5", name: "sizeDesktop", widget: "number", value_type: "float", min: 8, max: 160, step: 0.5, default: 13.5 }
+          - label: "Logo sizes"
+            name: "logos"
+            widget: "object"
+            fields:
+            - label: "Nav bar logo height"
+              name: "navLogo"
+              widget: "object"
+              collapsed: true
+              fields:
+                - { label: "Height on phones (px) - default 28", name: "heightPhone", widget: "number", value_type: "int", min: 10, max: 300, default: 28 }
+                - { label: "Height on desktop (px) - default 28", name: "heightDesktop", widget: "number", value_type: "int", min: 10, max: 300, default: 28 }
+            - label: "Footer logo height"
+              name: "footerLogo"
+              widget: "object"
+              collapsed: true
+              fields:
+                - { label: "Height on phones (px) - default 64", name: "heightPhone", widget: "number", value_type: "int", min: 10, max: 300, default: 64 }
+                - { label: "Height on desktop (px) - default 64", name: "heightDesktop", widget: "number", value_type: "int", min: 10, max: 300, default: 64 }
       - file: "content/settings/labels.json"
         label: "Section Labels (small text above titles)"
         name: "labels"

@@ -70,8 +70,8 @@ export default function Lightbox({ items, index, onClose, onNavigate }) {
               className="max-h-[75vh] w-auto rounded-lg object-contain"
             />
             <div className="mt-4 text-center">
-              <h3 className="font-display text-lg text-cream-50">{item?.title}</h3>
-              <p className="mt-1 text-[11.5px] font-bold uppercase tracking-wide text-gold-400">
+              <h3 className="t-sub text-cream-50">{item?.title}</h3>
+              <p className="mt-1 t-micro font-bold uppercase tracking-wide text-gold-400">
                 {item?.category}
               </p>
             </div>

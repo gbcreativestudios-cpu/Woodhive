@@ -1,12 +1,9 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Jomolhari";
-  src: local("Jomolhari");
-}
+@import "./typography.css";
 
 @theme {
-  --font-serif: "Jomolhari", "Georgia", serif;
+  --font-serif: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 
   --color-brown-950: #3D2209;
@@ -43,8 +40,8 @@ body {
 h1, h2, h3, h4,
 .font-display {
   font-family: var(--font-serif);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
 }
 
 @media (prefers-reduced-motion: reduce) {

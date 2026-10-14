@@ -22,18 +22,18 @@ export default function PageHero({ eyebrow, title, subtitle, image, minH = "min-
         className={`relative z-10 flex flex-col items-center justify-center px-6 pb-14 pt-36 text-center ${minH}`}
       >
         {eyebrow && (
-          <motion.span variants={item} className="mb-3.5 text-[13px] font-bold tracking-wide text-gold-400">
+          <motion.span variants={item} className="t-label mb-3.5 tracking-wide text-gold-400">
             {eyebrow}
           </motion.span>
         )}
         <motion.h1
           variants={item}
-          className="max-w-2xl font-display text-[clamp(32px,5vw,48px)] leading-[1.15] text-cream-50"
+          className="max-w-2xl t-page leading-[1.15] text-cream-50"
         >
           {title}
         </motion.h1>
         {subtitle && (
-          <motion.p variants={item} className="mt-4 max-w-lg text-[15px] leading-relaxed text-cream-50/85">
+          <motion.p variants={item} className="mt-4 max-w-lg t-banner leading-relaxed text-cream-50/85">
             {subtitle}
           </motion.p>
         )}

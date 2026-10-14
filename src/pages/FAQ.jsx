@@ -21,7 +21,7 @@ export default function FAQ() {
         {FAQ_GROUPS.map((g) => (
           <div key={g.title} className="mb-12">
             <Reveal>
-              <h2 className="mb-4.5 font-display text-[22px] text-brown-900">{g.title}</h2>
+              <h2 className="mb-4.5 t-card-lg text-brown-900">{g.title}</h2>
             </Reveal>
             <Accordion items={g.items} defaultOpen={-1} />
           </div>

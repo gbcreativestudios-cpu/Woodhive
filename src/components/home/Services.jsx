@@ -10,7 +10,7 @@ export default function Services() {
     <section className="mx-auto max-w-[1040px] px-6 py-16">
       <Reveal className="max-w-md">
         <SectionLabel id="homeServices" fallback={intro.eyebrow} />
-        <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{intro.heading}</h2>
+        <h2 className="mt-2.5 first:mt-0 t-section text-brown-900">{intro.heading}</h2>
       </Reveal>
 
       <div className="mt-12 flex flex-col gap-14">
@@ -24,11 +24,11 @@ export default function Services() {
               />
             </Reveal>
             <Reveal variant="up" delay={0.1}>
-              <h3 className="font-display text-[22px] text-brown-900">{s.title}</h3>
-              <p className="mt-2.5 text-sm leading-relaxed text-[#5b4636]">{s.description}</p>
+              <h3 className="t-card-lg text-brown-900">{s.title}</h3>
+              <p className="mt-2.5 t-body leading-relaxed text-[#5b4636]">{s.description}</p>
               <Link
                 to={`/services/${s.slug}`}
-                className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brown-900 transition-colors hover:text-orange-500"
+                className="mt-8 inline-flex items-center gap-1.5 t-body font-semibold text-brown-900 transition-colors hover:text-orange-500"
               >
                 Explore {s.navLabel} <ArrowUpRight className="h-3.5 w-3.5" />
               </Link>

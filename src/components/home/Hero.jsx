@@ -78,7 +78,7 @@ export default function Hero() {
                 hold at your real breakpoints. */}
             <motion.h1
               variants={item}
-              className="max-w-full font-display text-[clamp(32px,5vw,48px)] leading-[1.1] text-cream-50 lg:text-[38px]"
+              className="max-w-full t-hero leading-[1.1] text-cream-50"
             >
               {hero.headingLine1}
               <br />
@@ -89,7 +89,7 @@ export default function Hero() {
                 a distinct next step, at every breakpoint. */}
             <motion.p
               variants={item}
-              className="mt-3 max-w-md text-[15px] leading-relaxed text-cream-50/85"
+              className="mt-3 max-w-md t-banner leading-relaxed text-cream-50/85"
             >
               {hero.paragraph}
             </motion.p>

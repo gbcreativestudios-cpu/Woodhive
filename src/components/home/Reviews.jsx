@@ -45,13 +45,13 @@ export default function Reviews() {
       <div className="mx-auto max-w-[1040px]">
         <Reveal className="mx-auto max-w-xl text-center">
           <SectionLabel id="homeReviews" fallback={section.eyebrow} />
-          <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{section.heading}</h2>
-          <p className="mx-auto mt-3.5 max-w-md text-sm leading-relaxed text-[#5b4636]">{section.paragraph}</p>
+          <h2 className="mt-2.5 first:mt-0 t-section text-brown-900">{section.heading}</h2>
+          <p className="mx-auto mt-3.5 max-w-md t-body leading-relaxed text-[#5b4636]">{section.paragraph}</p>
         </Reveal>
       </div>
 
       {REVIEWS.length === 0 && (
-        <p className="mx-auto mt-8 max-w-md text-center text-sm text-[#5b4636]">{section.emptyMessage}</p>
+        <p className="mx-auto mt-8 max-w-md text-center t-body text-[#5b4636]">{section.emptyMessage}</p>
       )}
 
       {REVIEWS.length > 0 && !ticker && (

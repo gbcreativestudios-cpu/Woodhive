@@ -43,7 +43,7 @@ export default function WoodPanel({
         }}
       />
       {label ? (
-        <span className="absolute bottom-4 left-4 rounded-full bg-black/20 px-3 py-1 text-xs font-medium tracking-wide text-cream-50/80 backdrop-blur-sm">
+        <span className="absolute bottom-4 left-4 rounded-full bg-black/20 px-3 py-1 t-micro font-medium tracking-wide text-cream-50/80 backdrop-blur-sm">
           {label}
         </span>
       ) : null}

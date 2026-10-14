@@ -20,9 +20,9 @@ export default function Stats() {
             <AnimatedCounter
               value={s.value}
               suffix={s.suffix}
-              className="block font-sans text-[clamp(30px,4vw,44px)] font-bold text-brown-900"
+              className="block t-stat text-brown-900"
             />
-            <p className="mt-2 text-[12.5px] font-bold tracking-wide text-brown-900/75">{s.label}</p>
+            <p className="mt-2 t-tiny font-bold tracking-wide text-brown-900/75">{s.label}</p>
           </motion.div>
         ))}
       </motion.div>

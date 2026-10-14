@@ -8,7 +8,7 @@ import { useInquiryModal } from "../../context/InquiryModalContext";
 import settings from "../../../content/settings/general.json";
 
 const linkClass = ({ isActive }) =>
-  `text-sm transition-colors ${
+  `t-nav transition-colors ${
     isActive ? "font-semibold text-gold-400" : "font-medium text-cream-50/90 hover:text-gold-400"
   }`;
 
@@ -51,7 +51,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-[1040px] items-center justify-between rounded-lg border border-white/15 bg-[rgba(30,17,7,0.45)] px-4 py-3 backdrop-blur-lg sm:px-5">
         <Link to="/" onClick={closeAll}>
-          <Logo src={settings.navLogoImage} imgClassName="h-7 w-auto" />
+          <Logo src={settings.navLogoImage} imgClassName="logo-nav" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
@@ -74,7 +74,7 @@ export default function Navbar() {
           >
             <button
               onClick={() => setServicesOpen(true)}
-              className={`flex items-center gap-1 text-sm transition-colors ${
+              className={`flex items-center gap-1 t-nav transition-colors ${
                 onServicePage ? "font-semibold text-gold-400" : "font-medium text-cream-50/90 hover:text-gold-400"
               }`}
               aria-expanded={servicesOpen}
@@ -99,7 +99,7 @@ export default function Navbar() {
                         key={s.slug}
                         to={`/services/${s.slug}`}
                         onClick={closeAll}
-                        className="block px-5 py-3 text-left text-[13.5px] text-brown-900 transition-colors hover:bg-sand-100 hover:text-orange-500"
+                        className="block px-5 py-3 text-left t-small text-brown-900 transition-colors hover:bg-sand-100 hover:text-orange-500"
                       >
                         {s.navLabel}
                       </Link>
@@ -120,7 +120,7 @@ export default function Navbar() {
 
         <button
           onClick={openStartProject}
-          className="hidden items-center gap-1.5 rounded-lg bg-gold-400 px-5 py-2.5 text-[13.5px] font-bold text-ink-900 transition-colors hover:bg-orange-400 lg:inline-flex"
+          className="hidden items-center gap-1.5 rounded-lg bg-gold-400 px-5 py-2.5 t-button text-ink-900 transition-colors hover:bg-orange-400 lg:inline-flex"
         >
           Reach out <ArrowUpRight className="h-3.5 w-3.5" />
         </button>
@@ -148,16 +148,16 @@ export default function Navbar() {
             className="mt-2 overflow-hidden rounded-2xl bg-[rgba(30,17,7,0.9)] backdrop-blur-lg lg:hidden"
           >
             <div className="flex flex-col gap-1 p-4">
-              <Link to="/" onClick={closeAll} className="px-2 py-2.5 text-sm text-cream-50">
+              <Link to="/" onClick={closeAll} className="px-2 py-2.5 t-nav text-cream-50">
                 Home
               </Link>
-              <Link to="/about" onClick={closeAll} className="px-2 py-2.5 text-sm text-cream-50">
+              <Link to="/about" onClick={closeAll} className="px-2 py-2.5 t-nav text-cream-50">
                 About
               </Link>
 
               <button
                 onClick={() => setMobileServicesOpen((v) => !v)}
-                className="flex items-center justify-between px-2 py-2.5 text-left text-sm text-cream-50"
+                className="flex items-center justify-between px-2 py-2.5 text-left t-nav text-cream-50"
                 aria-expanded={mobileServicesOpen}
               >
                 Product &amp; Services
@@ -184,7 +184,7 @@ export default function Navbar() {
                           key={s.slug}
                           to={`/services/${s.slug}`}
                           onClick={closeAll}
-                          className="px-2 py-2.5 text-left text-[13.5px] text-cream-50/75"
+                          className="px-2 py-2.5 text-left t-small text-cream-50/75"
                         >
                           {s.navLabel}
                         </Link>
@@ -194,10 +194,10 @@ export default function Navbar() {
                 )}
               </AnimatePresence>
 
-              <Link to="/gallery" onClick={closeAll} className="px-2 py-2.5 text-sm text-cream-50">
+              <Link to="/gallery" onClick={closeAll} className="px-2 py-2.5 t-nav text-cream-50">
                 Gallery
               </Link>
-              <Link to="/faq" onClick={closeAll} className="px-2 py-2.5 text-sm text-cream-50">
+              <Link to="/faq" onClick={closeAll} className="px-2 py-2.5 t-nav text-cream-50">
                 FAQ
               </Link>
 
@@ -206,7 +206,7 @@ export default function Navbar() {
                   closeAll();
                   openStartProject();
                 }}
-                className="mt-2 flex w-full items-center justify-center gap-1.5 rounded-lg bg-gold-400 px-5 py-3 text-[13.5px] font-bold text-ink-900"
+                className="mt-2 flex w-full items-center justify-center gap-1.5 rounded-lg bg-gold-400 px-5 py-3 t-button text-ink-900"
               >
                 Reach out <ArrowUpRight className="h-3.5 w-3.5" />
               </button>

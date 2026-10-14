@@ -14,11 +14,11 @@ export default function Story() {
       </Reveal>
       <Reveal variant="right">
         <SectionLabel id="aboutStory" fallback={story.eyebrow} />
-        <h2 className="mt-2.5 first:mt-0 font-display text-[clamp(26px,3.4vw,36px)] leading-tight text-brown-900">
+        <h2 className="mt-2.5 first:mt-0 t-section leading-tight text-brown-900">
           {story.heading}
         </h2>
-        <p className="mt-4 text-[14.5px] leading-[1.7] text-[#5b4636]">{story.paragraph1}</p>
-        <p className="mt-3.5 text-[14.5px] leading-[1.7] text-[#5b4636]">{story.paragraph2}</p>
+        <p className="mt-4 t-body-lg leading-[1.7] text-[#5b4636]">{story.paragraph1}</p>
+        <p className="mt-3.5 t-body-lg leading-[1.7] text-[#5b4636]">{story.paragraph2}</p>
       </Reveal>
     </section>
   );

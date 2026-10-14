@@ -37,12 +37,12 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
           <div>
             {/* Footer's own logo image — independent from the nav's */}
-            <img src={settings.footerLogoImage} alt="The Wood Hive" className="h-16 w-auto" />
+            <img src={settings.footerLogoImage} alt="The Wood Hive" className="logo-footer" />
           </div>
 
           <div>
-            <h4 className="mb-3.5 text-[13.5px] font-bold text-cream-50">Quick Links</h4>
-            <ul className="flex flex-col gap-2 text-[13.5px] text-cream-50/60">
+            <h4 className="mb-3.5 t-footer font-bold text-cream-50">Quick Links</h4>
+            <ul className="flex flex-col gap-2 t-footer text-cream-50/60">
               <li><Link to="/" className="transition-colors hover:text-orange-400">Home</Link></li>
               <li><Link to="/about" className="transition-colors hover:text-orange-400">About</Link></li>
               <li><Link to="/gallery" className="transition-colors hover:text-orange-400">Portfolio Gallery</Link></li>
@@ -51,8 +51,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-3.5 text-[13.5px] font-bold text-cream-50">Products &amp; Services</h4>
-            <ul className="flex flex-col gap-2 text-[13.5px] text-cream-50/60">
+            <h4 className="mb-3.5 t-footer font-bold text-cream-50">Products &amp; Services</h4>
+            <ul className="flex flex-col gap-2 t-footer text-cream-50/60">
               {SERVICES.map((s) => (
                 <li key={s.slug}>
                   <Link to={`/services/${s.slug}`} className="transition-colors hover:text-orange-400">
@@ -64,8 +64,8 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-3.5 text-[13.5px] font-bold text-cream-50">Connect</h4>
-            <ul className="flex flex-col gap-2 text-[13.5px] text-cream-50/60">
+            <h4 className="mb-3.5 t-footer font-bold text-cream-50">Connect</h4>
+            <ul className="flex flex-col gap-2 t-footer text-cream-50/60">
               <li>{settings.email}</li>
               <li>{settings.phone}</li>
               <li>{settings.address}</li>
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-2 border-t border-cream-50/10 pt-5 text-xs text-cream-50/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-2 border-t border-cream-50/10 pt-5 t-micro text-cream-50/45 sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} {settings.footerCopyrightName}. All rights reserved.</p>
           <p>{settings.footerTagline}</p>
         </div>

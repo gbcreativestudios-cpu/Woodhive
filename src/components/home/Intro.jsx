@@ -24,15 +24,15 @@ export default function Intro() {
             className="h-56 w-full rounded-lg object-cover sm:h-80"
           />
           <div className="px-1 py-3 sm:pr-5">
-            <h2 className="font-display text-[clamp(26px,3.4vw,40px)] leading-[1.18] text-ink-900">
+            <h2 className="t-intro leading-[1.18] text-ink-900">
               {intro.heading}
             </h2>
-            <p className="mt-4 max-w-md text-[14.5px] leading-relaxed text-[#5b4636]">
+            <p className="mt-4 max-w-md t-body-lg leading-relaxed text-[#5b4636]">
               {intro.paragraph}
             </p>
             <Link
               to="/about"
-              className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-orange-500 transition-colors hover:text-brown-900"
+              className="mt-5 inline-flex items-center gap-1.5 t-body font-semibold text-orange-500 transition-colors hover:text-brown-900"
             >
               {intro.linkLabel} <ArrowUpRight className="h-[15px] w-[15px]" />
             </Link>

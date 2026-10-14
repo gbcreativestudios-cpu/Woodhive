@@ -8,10 +8,10 @@ export default function SelectedWork() {
     <section className="bg-sand-100 px-6 py-16">
       <div className="mx-auto max-w-[1040px]">
         <Reveal className="flex flex-wrap items-end justify-between gap-3">
-          <h2 className="font-display text-[clamp(26px,3.4vw,36px)] text-brown-900">{selectedWork.heading}</h2>
+          <h2 className="t-section text-brown-900">{selectedWork.heading}</h2>
           <Link
             to="/gallery"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-brown-900 transition-colors hover:text-orange-500"
+            className="inline-flex items-center gap-1.5 t-body font-semibold text-brown-900 transition-colors hover:text-orange-500"
           >
             {selectedWork.linkLabel} <ArrowUpRight className="h-3.5 w-3.5" />
           </Link>
@@ -26,8 +26,8 @@ export default function SelectedWork() {
                   alt={w.title}
                   className="h-56 w-full rounded-lg object-cover transition-transform duration-500 group-hover:scale-[1.01] sm:h-72"
                 />
-                <h3 className="mt-4 font-display text-lg text-brown-900">{w.title}</h3>
-                <p className="mt-1 text-xs font-bold tracking-wide text-orange-500">{w.category}</p>
+                <h3 className="mt-4 t-sub text-brown-900">{w.title}</h3>
+                <p className="mt-1 t-micro font-bold tracking-wide text-orange-500">{w.category}</p>
               </Link>
             </Reveal>
           ))}

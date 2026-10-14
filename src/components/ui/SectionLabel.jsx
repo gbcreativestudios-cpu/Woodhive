@@ -4,5 +4,5 @@ import { getLabel } from "../../data/labels";
 export default function SectionLabel({ id, fallback, className = "text-orange-500" }) {
   const text = getLabel(id, fallback);
   if (!text) return null;
-  return <p className={`text-[13.5px] font-bold ${className}`}>{text}</p>;
+  return <p className={`t-label ${className}`}>{text}</p>;
 }
