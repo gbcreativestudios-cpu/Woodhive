@@ -1,53 +1,53 @@
 {
-  "homeServices": {
-    "show": true,
-    "text": "Our core services"
-  },
-  "homeCapabilities": {
-    "show": true,
-    "text": "Limitless capabilities"
-  },
-  "homeProcess": {
-    "show": true,
-    "text": "Our Process"
-  },
-  "homeReviews": {
-    "show": true,
-    "text": "Kind words"
-  },
-  "homeFaq": {
-    "show": true,
-    "text": "Quick answers"
+  "serviceDetailHero": {
+    "show": false
   },
   "aboutHero": {
-    "show": true,
+    "show": false,
     "text": "About The Wood Hive"
+  },
+  "serviceWorkDone": {
+    "show": false,
+    "text": "Work we've done"
   },
   "aboutStory": {
     "show": true,
     "text": "Our story"
   },
-  "aboutValues": {
-    "show": true,
-    "text": "What we stand for"
-  },
   "aboutTeam": {
-    "show": true,
+    "show": false,
     "text": "The people behind it"
   },
   "galleryHero": {
-    "show": true,
+    "show": false,
     "text": "Portfolio"
   },
+  "aboutValues": {
+    "show": false,
+    "text": "What we stand for"
+  },
   "faqHero": {
-    "show": true,
+    "show": false,
     "text": "FAQ"
   },
-  "serviceWorkDone": {
-    "show": true,
-    "text": "Work we've done"
+  "homeProcess": {
+    "show": false,
+    "text": "Our Process"
   },
-  "serviceDetailHero": {
-    "show": true
+  "homeCapabilities": {
+    "show": false,
+    "text": "Limitless capabilities"
+  },
+  "homeFaq": {
+    "show": false,
+    "text": "Quick answers"
+  },
+  "homeReviews": {
+    "show": false,
+    "text": "Kind words"
+  },
+  "homeServices": {
+    "show": false,
+    "text": "Our core services"
   }
 }
