@@ -8,6 +8,7 @@ import About from "./pages/About";
 import ServiceDetail from "./pages/ServiceDetail";
 import Gallery from "./pages/Gallery";
 import FAQ from "./pages/FAQ";
+import settings from "../content/settings/general.json";
 
 /** Jump to top on route change so pages don't open mid-scroll. */
 function ScrollToTop() {
@@ -46,6 +47,17 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
+  useEffect(() => {
+    const favicon = document.querySelector('link[rel~="icon"]');
+    if (favicon) favicon.href = settings.faviconImage || "/images/favicon.svg";
+
+    const loader = document.getElementById("site-loader");
+    if (!loader) return undefined;
+    loader.classList.add("is-loaded");
+    const timeout = window.setTimeout(() => loader.remove(), 240);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
   return (
     <BrowserRouter>
       <InquiryModalProvider>
