@@ -1,13 +1,13 @@
 {
   "primaryButtonLabel": "EXPLORE OUR WORK",
-  "overlayTopOpacity": 24,
-  "overlayMiddleOpacity": 48,
+  "overlayTopOpacity": 60,
+  "overlayMiddleOpacity": 60,
   "backgroundImage": "/images/uploads/woodhive-hero-woodworker.jpg",
   "secondaryButtonLabel": "START A PROJECT",
   "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
-  "overlayMiddlePosition": 45,
-  "overlayBottomOpacity": 68,
-  "overlayColor": "#3D2209",
+  "overlayMiddlePosition": 60,
+  "overlayBottomOpacity": 60,
+  "overlayColor": "#000000",
   "carouselImages": [
     "/images/uploads/luxury_interior_with_wood_panels_20260911103707.jpeg",
     "/images/uploads/luxury_interior_with_wood_panels_20260911212822.jpeg",
