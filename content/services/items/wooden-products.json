@@ -14,5 +14,7 @@
   "img": "/images/uploads/wooden_mobile_retail_cart_20260911212828.jpeg",
   "galleryCategory": "Wooden Products",
   "ctaLabel": "Need a custom wooden product?",
-  "hasProductsPicker": true
+  "hasProductsPicker": true,
+  "overlayColor": "#3D2209",
+  "overlayOpacity": 62
 }

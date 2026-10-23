@@ -1,5 +1,7 @@
 {
   "eyebrow": "Portfolio",
   "title": "Work across renovation, product, and rental",
-  "image": "/images/uploads/luxury_interior_with_wood_panels_20260911103707.jpeg"
+  "image": "/images/uploads/luxury_interior_with_wood_panels_20260911103707.jpeg",
+  "overlayColor": "#3D2209",
+  "overlayOpacity": 62
 }

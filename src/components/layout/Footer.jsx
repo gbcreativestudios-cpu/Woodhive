@@ -32,7 +32,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-brown-950">
+    <footer className="bg-brown-950" style={{ backgroundColor: settings.footerBackgroundColor || "#3D2209" }}>
       <Reveal className="mx-auto max-w-[1040px] px-6 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
           <div>

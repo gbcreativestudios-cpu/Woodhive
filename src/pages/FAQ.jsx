@@ -14,6 +14,8 @@ export default function FAQ() {
         eyebrow={getLabel("faqHero", hero.eyebrow)}
         title={hero.title}
         image={hero.image}
+        overlayColor={hero.overlayColor}
+        overlayOpacity={hero.overlayOpacity}
         minH="min-h-[42vh]"
       />
 

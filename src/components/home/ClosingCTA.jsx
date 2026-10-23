@@ -2,6 +2,7 @@ import Reveal from "../ui/Reveal";
 import Button from "../ui/Button";
 import { useInquiryModal } from "../../context/InquiryModalContext";
 import defaults from "../../../content/home/closing-cta.json";
+import settings from "../../../content/settings/general.json";
 
 /**
  * `to` links somewhere; omit it and the button opens the general
@@ -25,11 +26,11 @@ export default function ClosingCTA({
         <p className="mx-auto mt-3.5 max-w-md t-body leading-relaxed text-cream-50/90">{body}</p>
         <div className="mt-6 flex justify-center">
           {to ? (
-            <Button to={to} variant="brown">
+            <Button to={to} variant="brown" color={settings.startConversationButtonColor}>
               {cta}
             </Button>
           ) : (
-            <Button onClick={openStartProject} variant="brown">
+            <Button onClick={openStartProject} variant="brown" color={settings.startConversationButtonColor}>
               {cta}
             </Button>
           )}

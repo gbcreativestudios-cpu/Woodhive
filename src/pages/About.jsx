@@ -15,6 +15,8 @@ export default function About() {
         title={hero.title}
         subtitle={hero.subtitle}
         image={hero.image}
+        overlayColor={hero.overlayColor}
+        overlayOpacity={hero.overlayOpacity}
         minH="min-h-[54vh]"
       />
       <Story />

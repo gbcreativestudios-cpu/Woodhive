@@ -361,6 +361,11 @@ collections:
           - { label: "TikTok URL", name: "tiktokUrl", widget: "string" }
           - { label: "Footer Tagline", name: "footerTagline", widget: "string" }
           - { label: "Footer Copyright Name", name: "footerCopyrightName", widget: "string" }
+          - { label: "FAQ Question Bar Color", name: "faqBarColor", widget: "color", default: "#592D10", hint: "Used for the question bars on the home page and FAQ page. Bar text remains white." }
+          - { label: "Start a Conversation Button Color", name: "startConversationButtonColor", widget: "color", default: "#592D10", hint: "Background color for the Start a Conversation buttons. Button text remains white." }
+          - { label: "Tell Us What You Need Button Color", name: "tellUsWhatYouNeedButtonColor", widget: "color", default: "#592D10", hint: "Background color for the Tell Us What You Need button. Button text remains white." }
+          - { label: "Leave a Review Button Color", name: "leaveReviewButtonColor", widget: "color", default: "#592D10", hint: "Background color for the Leave a Review button. Button text remains white." }
+          - { label: "Footer Background Color", name: "footerBackgroundColor", widget: "color", default: "#3D2209" }
 
   # ---------------------------------------------------------------------
   # Home page — one file per section, in the order they appear
@@ -503,6 +508,8 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Subtitle", name: "subtitle", widget: "text" }
           - { label: "Image", name: "image", widget: "image" }
+          - { label: "Overlay Color", name: "overlayColor", widget: "color", default: "#3D2209" }
+          - { label: "Overlay Opacity (%)", name: "overlayOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 62, hint: "0 = transparent image; 100 = fully covered by the selected solid color." }
       - file: "content/about/story.json"
         label: "Story Section"
         name: "story"
@@ -554,6 +561,8 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
+          - { label: "Overlay Color", name: "overlayColor", widget: "color", default: "#3D2209" }
+          - { label: "Overlay Opacity (%)", name: "overlayOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 62, hint: "0 = transparent image; 100 = fully covered by the selected solid color." }
       - file: "content/gallery/closing-cta.json"
         label: "Closing CTA"
         name: "closingCta"
@@ -581,6 +590,8 @@ collections:
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
+          - { label: "Overlay Color", name: "overlayColor", widget: "color", default: "#3D2209" }
+          - { label: "Overlay Opacity (%)", name: "overlayOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 62, hint: "0 = transparent image; 100 = fully covered by the selected solid color." }
       - file: "content/faq/closing-cta.json"
         label: "Closing CTA"
         name: "closingCta"
@@ -794,6 +805,8 @@ collections:
         name: "points"
         widget: "list"
       - { label: "Image", name: "img", widget: "image" }
+      - { label: "Page Header Overlay Color", name: "overlayColor", widget: "color", default: "#3D2209" }
+      - { label: "Page Header Overlay Opacity (%)", name: "overlayOpacity", widget: "number", value_type: "int", min: 0, max: 100, default: 62, hint: "0 = transparent image; 100 = fully covered by the selected solid color." }
       - label: "Gallery Category"
         name: "galleryCategory"
         widget: "string"

@@ -14,5 +14,7 @@
   "img": "https://images.pexels.com/photos/16850260/pexels-photo-16850260.jpeg?auto=compress&cs=tinysrgb&w=1600",
   "galleryCategory": "Renovation & Maintenance",
   "ctaLabel": "Need renovation or maintenance work?",
-  "hasProductsPicker": false
+  "hasProductsPicker": false,
+  "overlayColor": "#3D2209",
+  "overlayOpacity": 62
 }

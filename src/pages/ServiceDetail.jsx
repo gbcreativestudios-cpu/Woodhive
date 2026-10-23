@@ -27,6 +27,8 @@ export default function ServiceDetail() {
         title={service.title}
         subtitle={service.description}
         image={service.img}
+        overlayColor={service.overlayColor}
+        overlayOpacity={service.overlayOpacity}
         minH="min-h-[46vh]"
       />
 

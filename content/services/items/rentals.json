@@ -14,5 +14,7 @@
   "img": "https://images.unsplash.com/photo-1683795695196-d78780ceb235?auto=format&fit=crop&w=1600&q=85",
   "galleryCategory": "Rentals",
   "ctaLabel": "Need something for an event?",
-  "hasProductsPicker": false
+  "hasProductsPicker": false,
+  "overlayColor": "#3D2209",
+  "overlayOpacity": 62
 }

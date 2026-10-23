@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Navbar from "./Navbar";
-import { OVERLAY } from "../../lib/images";
+import { buildSolidOverlay } from "../../lib/images";
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } };
 const item = {
@@ -8,11 +8,11 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
 };
 
-export default function PageHero({ eyebrow, title, subtitle, image, minH = "min-h-[48vh]" }) {
+export default function PageHero({ eyebrow, title, subtitle, image, overlayColor, overlayOpacity, minH = "min-h-[48vh]" }) {
   return (
     <section className={`relative overflow-hidden ${minH}`}>
       <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0" style={{ background: OVERLAY.pageHero }} />
+      <div className="absolute inset-0" style={{ backgroundColor: buildSolidOverlay(overlayColor, overlayOpacity) }} />
       <Navbar />
 
       <motion.div

@@ -2,8 +2,9 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import Reveal from "./Reveal";
+import settings from "../../../content/settings/general.json";
 
-export default function Accordion({ items, defaultOpen = -1 }) {
+export default function Accordion({ items, defaultOpen = -1, barColor = settings.faqBarColor }) {
   const [open, setOpen] = useState(defaultOpen);
 
   return (
@@ -14,7 +15,8 @@ export default function Accordion({ items, defaultOpen = -1 }) {
           <Reveal key={f.q} delay={i * 0.04}>
             <button
               onClick={() => setOpen(isOpen ? -1 : i)}
-              className="flex w-full items-center justify-between gap-4 rounded-2xl bg-brown-900 px-6 py-5 text-left t-body-lg font-medium text-cream-50 transition-colors hover:bg-brown-800"
+              className="flex w-full items-center justify-between gap-4 rounded-md px-6 py-5 text-left t-body-lg font-medium text-cream-50 transition-[filter] hover:brightness-110"
+              style={{ backgroundColor: barColor || "#592D10" }}
               aria-expanded={isOpen}
             >
               <span>{f.q}</span>

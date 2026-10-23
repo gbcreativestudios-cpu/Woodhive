@@ -19,35 +19,39 @@ export default function Button({
   children,
   variant = "gold",
   uppercase = false,
+  color,
+  style,
   className = "",
   ...props
 }) {
   const classes = [
     "inline-flex items-center justify-center gap-2 rounded-md px-7 py-3.5",
     "t-button transition-all duration-200 hover:scale-[1.02]",
+    color ? "hover:brightness-110" : "",
     "w-full sm:w-auto text-center",
     uppercase ? "tracking-wide" : "",
     VARIANTS[variant],
     className,
   ].join(" ");
+  const buttonStyle = color ? { ...style, backgroundColor: color } : style;
 
   if (to) {
     return (
-      <Link to={to} className={classes} {...props}>
+      <Link to={to} className={classes} style={buttonStyle} {...props}>
         {children}
       </Link>
     );
   }
   if (href) {
     return (
-      <a href={href} className={classes} {...props}>
+      <a href={href} className={classes} style={buttonStyle} {...props}>
         {children}
       </a>
     );
   }
   // Neither `to` nor `href` — behaves as an action button (e.g. opens a modal).
   return (
-    <button type="button" onClick={onClick} className={classes} {...props}>
+    <button type="button" onClick={onClick} className={classes} style={buttonStyle} {...props}>
       {children}
     </button>
   );
