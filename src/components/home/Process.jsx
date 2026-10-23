@@ -6,15 +6,15 @@ function ProcessStep({ step, index, total }) {
   const number = String(index + 1).padStart(2, "0");
   const numberBlock = (
     <div className="w-[72px] shrink-0 text-center sm:w-[92px]">
-      <span className="font-display text-3xl leading-none text-ink-900 sm:text-4xl">{number}</span>
-      <span className="mt-1 block text-[9px] font-medium uppercase tracking-wide text-ink-900/75 sm:text-[10px]">
+      <span className="t-stat leading-none text-ink-900">{number}</span>
+      <span className="t-micro mt-1 block font-medium uppercase tracking-wide text-ink-900/75">
         Step {index + 1} of {total}
       </span>
     </div>
   );
 
   const card = (
-    <div className="min-h-[124px] flex-1 bg-ink-900 px-5 py-5 text-cream-50 sm:min-h-[136px] sm:px-8 sm:py-6">
+    <div className="min-h-[124px] flex-1 rounded-md bg-ink-900 px-5 py-5 text-cream-50 sm:min-h-[136px] sm:px-8 sm:py-6">
       <h3 className="t-step leading-tight text-orange-500">{step.title}</h3>
       <p className="mt-1.5 max-w-2xl t-body leading-snug text-cream-50/90">{step.description}</p>
     </div>
