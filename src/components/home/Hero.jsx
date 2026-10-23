@@ -30,16 +30,24 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1040px] items-end px-6 pb-10 pt-32 sm:pb-14 lg:pb-16"
+        className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1440px] items-end px-6 pb-10 pt-32 sm:px-8 sm:pb-14 lg:px-[6.5%] lg:pb-24"
       >
-        <div className="grid w-full grid-cols-1 items-end gap-y-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)] lg:gap-x-12">
+        <div className="grid w-full grid-cols-1 items-end gap-y-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(390px,0.9fr)] lg:gap-x-16">
           <div className="flex flex-col items-start text-left">
-            <motion.h1 variants={item} className="max-w-2xl t-hero leading-[1.05] text-cream-50">
+            <motion.h1
+              variants={item}
+              className="max-w-2xl t-hero leading-[1.12] text-cream-50"
+              style={{ fontSize: "clamp(2.5rem, 5.1vw, 4rem)" }}
+            >
               {hero.headingLine1}
               <br />
               {hero.headingLine2}
             </motion.h1>
-            <motion.p variants={item} className="mt-4 max-w-xl t-banner leading-relaxed text-cream-50/90">
+            <motion.p
+              variants={item}
+              className="mt-5 max-w-xl t-banner leading-[1.25] text-cream-50/95"
+              style={{ fontSize: "clamp(0.8rem, 1.2vw, 0.9rem)" }}
+            >
               {hero.paragraph}
             </motion.p>
             <motion.div variants={item} className="mt-6 w-full sm:w-auto">
@@ -48,7 +56,7 @@ export default function Hero() {
                   to="/gallery"
                   variant="gold"
                   uppercase
-                  className="order-2 w-full sm:w-auto lg:order-1"
+                  className="order-2 !px-7 !py-[11px] !text-[16px] sm:w-auto lg:order-1"
                 >
                   {hero.primaryButtonLabel}
                 </Button>
@@ -56,7 +64,7 @@ export default function Hero() {
                   onClick={openStartProject}
                   variant="cream"
                   uppercase
-                  className="order-1 w-full sm:w-auto lg:order-2"
+                  className="order-1 !px-7 !py-[11px] !text-[16px] sm:w-auto lg:order-2"
                 >
                   {hero.secondaryButtonLabel}
                 </Button>
@@ -64,15 +72,16 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-2 gap-5 border-t border-cream-50/30 pt-5 lg:gap-8 lg:border-t-0 lg:pt-0">
+          <div className="grid grid-cols-3 gap-3 border-t border-cream-50/30 pt-5 sm:gap-6 lg:gap-5 lg:border-t-0 lg:pt-0">
             {stats.items.map((stat) => (
               <motion.div key={stat.label} variants={item}>
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
                   className="block t-stat text-cream-50"
+                  style={{ fontSize: "clamp(1.5rem, 2.4vw, 1.9rem)" }}
                 />
-                <p className="mt-2 max-w-[12ch] t-tiny font-bold tracking-wide text-cream-50/85">
+                <p className="mt-1 max-w-[12ch] text-[11px] font-bold leading-[1.15] tracking-wide text-cream-50/95">
                   {stat.label}
                 </p>
               </motion.div>
