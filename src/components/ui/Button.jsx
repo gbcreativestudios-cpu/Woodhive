@@ -23,7 +23,7 @@ export default function Button({
   ...props
 }) {
   const classes = [
-    "inline-flex items-center justify-center gap-2 rounded-lg px-7 py-3.5",
+    "inline-flex items-center justify-center gap-2 rounded-md px-7 py-3.5",
     "t-button transition-all duration-200 hover:scale-[1.02]",
     "w-full sm:w-auto text-center",
     uppercase ? "tracking-wide" : "",

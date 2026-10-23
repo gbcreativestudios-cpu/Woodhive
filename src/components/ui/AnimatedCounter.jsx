@@ -6,6 +6,7 @@ export default function AnimatedCounter({
   suffix = "",
   duration = 1.6,
   className = "",
+  style,
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.6 });
@@ -30,7 +31,7 @@ export default function AnimatedCounter({
   }, [springValue, suffix]);
 
   return (
-    <motion.span ref={ref} className={className}>
+    <motion.span ref={ref} className={className} style={style}>
       <span ref={spanRef}>0{suffix}</span>
     </motion.span>
   );

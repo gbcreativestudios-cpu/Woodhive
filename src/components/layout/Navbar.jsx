@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "../ui/Logo";
@@ -42,14 +43,14 @@ export default function Navbar() {
     setServicesOpen(false);
   };
 
-  return (
+  return createPortal((
     <motion.header
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed inset-x-0 top-4 z-40 px-4 sm:top-5 sm:px-5"
+      className="fixed inset-x-0 top-4 z-[90] px-4 sm:top-5 sm:px-6 lg:px-[6.5%]"
     >
-      <div className="mx-auto flex max-w-[1040px] items-center justify-between rounded-lg border border-white/15 bg-[rgba(30,17,7,0.45)] px-4 py-3 backdrop-blur-lg sm:px-5">
+      <div className="mx-auto flex w-full max-w-[1440px] items-center justify-between rounded-md border border-white/15 bg-[rgba(30,17,7,0.72)] px-4 py-3 shadow-lg backdrop-blur-lg sm:px-5">
         <Link to="/" onClick={closeAll}>
           <Logo src={settings.navLogoImage} imgClassName="logo-nav" />
         </Link>
@@ -130,7 +131,7 @@ export default function Navbar() {
             setMobileOpen((v) => !v);
             setMobileServicesOpen(false);
           }}
-          className="grid h-10 w-10 place-items-center rounded-[10px] bg-white/10 text-cream-50 lg:hidden"
+          className="grid h-10 w-10 place-items-center rounded-md bg-white/10 text-cream-50 lg:hidden"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
@@ -215,5 +216,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </motion.header>
-  );
+  ), document.body);
 }

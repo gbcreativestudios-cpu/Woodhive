@@ -3,22 +3,22 @@
   "heading": "Our team",
   "members": [
     {
-      "img": "https://picsum.photos/seed/woodhive-member1/400/480",
+      "img": "https://images.pexels.com/photos/16850251/pexels-photo-16850251.jpeg?auto=compress&cs=tinysrgb&w=800",
       "name": "Studio Lead",
       "role": "Founder & Lead Craftsman"
     },
     {
-      "img": "https://picsum.photos/seed/woodhive-member2/400/480",
+      "img": "https://images.pexels.com/photos/16850260/pexels-photo-16850260.jpeg?auto=compress&cs=tinysrgb&w=800",
       "name": "Project Manager",
       "role": "Client & Site Coordination"
     },
     {
-      "img": "https://picsum.photos/seed/woodhive-member3/400/480",
+      "img": "https://images.pexels.com/photos/6791516/pexels-photo-6791516.jpeg?auto=compress&cs=tinysrgb&w=800",
       "name": "Structural Specialist",
       "role": "Renovation & Maintenance"
     },
     {
-      "img": "https://picsum.photos/seed/woodhive-member4/400/480",
+      "img": "https://images.pexels.com/photos/6790809/pexels-photo-6790809.jpeg?auto=compress&cs=tinysrgb&w=800",
       "name": "Production Lead",
       "role": "Wooden Products & Rentals"
     }
