@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Wood Hive — Crafted in Wood. Defined by Elegance.</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <meta name="description" content="The Wood Hive builds thoughtful woodwork — renovation and maintenance, custom wooden products, and event rentals — for spaces you live, work, and celebrate in." />
     <!-- Inter is self-hosted and preloaded so text never flashes in a different font. -->
     <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -13,6 +14,40 @@
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <div id="site-loader" aria-hidden="true">
+      <div id="site-loader-mark">
+        <img src="/images/favicon.svg" alt="" />
+      </div>
+    </div>
+    <style>
+      #site-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        display: grid;
+        place-items: center;
+        background: #f6f1e9;
+        opacity: 1;
+        transition: opacity 220ms ease;
+      }
+      #site-loader.is-loaded { opacity: 0; pointer-events: none; }
+      #site-loader-mark img,
+      #site-loader-mark svg {
+        display: block;
+        width: min(180px, 42vw);
+        max-height: 96px;
+        object-fit: contain;
+      }
+      .loader-orange-mark { animation: loader-breathe 1.35s ease-in-out infinite; }
+      @keyframes loader-breathe {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.22; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .loader-orange-mark { animation: none; }
+        #site-loader { transition: none; }
+      }
+    </style>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>

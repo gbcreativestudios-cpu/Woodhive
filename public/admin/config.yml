@@ -354,6 +354,8 @@ collections:
         fields:
           - { label: "Nav Bar Logo", name: "navLogoImage", widget: "image", hint: "Shown in the top navigation bar." }
           - { label: "Footer Logo", name: "footerLogoImage", widget: "image", hint: "Shown in the site footer — can be a different image from the nav logo." }
+          - { label: "Loading Logo (SVG)", name: "loaderLogoImage", widget: "image", required: false, hint: "Upload your original logo as an SVG for the loading screen. If the orange shape has fill #D88B36 or id=\"loader-accent\", only it will breathe. Leave empty to use the footer logo." }
+          - { label: "Favicon", name: "faviconImage", widget: "image", hint: "Browser tab icon. Starts with the Wood Hive mark; upload a replacement here when you want to change it." }
           - { label: "Contact Email", name: "email", widget: "string" }
           - { label: "Contact Phone", name: "phone", widget: "string" }
           - { label: "Address", name: "address", widget: "string" }
