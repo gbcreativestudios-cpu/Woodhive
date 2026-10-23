@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
-import { buildHeroOverlay, SHOW_HERO_CAROUSEL_ON_MOBILE } from "../../lib/images";
+import { buildHeroOverlay } from "../../lib/images";
 import Button, { ButtonRow } from "../ui/Button";
 import Navbar from "../layout/Navbar";
-import HeroCarousel from "./HeroCarousel";
+import AnimatedCounter from "../ui/AnimatedCounter";
 import { useInquiryModal } from "../../context/InquiryModalContext";
 import hero from "../../../content/home/hero.json";
+import stats from "../../../content/home/stats.json";
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.14, delayChildren: 0.25 } } };
 const item = {
@@ -12,104 +13,73 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
 };
 
-// The section is always a full viewport height now (mobile and desktop) —
-// the extra "push down" room on mobile when the carousel is showing comes
-// entirely from the bigger top padding below, not from an oversized min-height.
-const heroMinH = "min-h-screen";
-// Trimmed the mobile/sm top padding a bit (was pt-52/pt-56) to close up the
-// blank space above the carousel that was left over on phones.
-const heroPadTop = SHOW_HERO_CAROUSEL_ON_MOBILE
-  ? "pt-44 sm:pt-48 lg:pt-40"
-  : "pt-36 sm:pt-40 lg:pt-40";
-
 export default function Hero() {
   const { openStartProject } = useInquiryModal();
 
   return (
-    <section className={`relative overflow-hidden ${heroMinH}`}>
-      <img src={hero.backgroundImage} alt="" className="absolute inset-0 h-full w-full object-cover" />
+    <section className="relative isolate min-h-[100svh] overflow-hidden bg-brown-950">
+      <img
+        src={hero.backgroundImage}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div className="absolute inset-0" style={{ background: buildHeroOverlay(hero) }} />
       <Navbar />
 
-      {/* Back to a single max-w-[1040px] box with its own px-6 padding —
-          undoing the earlier change that flush-matched this to the
-          navbar's edges. That left the left edge flush with the navbar
-          but the right edge short of it (grid content doesn't reach the
-          box's full width), reading as lopsided. This restores the
-          original, centered look: content narrower than the navbar,
-          with the navbar extending out evenly on both sides. */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className={`relative z-10 mx-auto flex w-full max-w-[1040px] flex-col justify-start px-6 pb-16 lg:justify-end lg:pb-[100px] ${heroMinH} ${heroPadTop}`}
+        className="relative z-10 mx-auto flex min-h-[100svh] w-full max-w-[1040px] items-end px-6 pb-10 pt-32 sm:pb-14 lg:pb-16"
       >
-        {/* CSS grid (not flex) for the row: grid tracks resolve to a
-            definite height even when driven by content, so the image's
-            h-full reliably stretches to match the text column instead of
-            collapsing — flex's two-pass sizing was leaving it at 0 height
-            on desktop since its only content is an absolutely-positioned
-            <img>. Tighter gap-4 keeps image/heading/text close together on
-            mobile. Back to an even lg:grid-cols-2 split with the original
-            lg:gap-14 (was skewed 0.72fr/1fr with a tighter gap, which read
-            as left-heavy with a big empty gap on the right past the
-            buttons) — this centers the image/text halves the way the row
-            looked before that change. */}
-        <div className="grid w-full grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-14">
-          <motion.div
-            variants={item}
-            className={`w-full lg:h-full ${SHOW_HERO_CAROUSEL_ON_MOBILE ? "" : "hidden lg:block"}`}
-          >
-            <HeroCarousel images={hero.carouselImages} />
-          </motion.div>
-
-          <div className="flex w-full flex-col items-start text-left">
-            {/* Column is back to a 50/50 split (see the grid comment above),
-                narrower than the skewed layout this was last tuned for, so
-                the lg size comes down from 44px to 38px to stay safely
-                inside two lines at the restored column width — still up
-                from the original 36px thanks to the earlier width fix
-                (padding moved off the max-w box) giving this column a bit
-                more room than it had originally. max-w-full (was max-w-xl)
-                so the heading can use the whole column instead of being
-                capped at 576px. NOTE: exact text-wrapping depends on the
-                actual rendered "Jomolhari" font's metrics, which I can't
-                preview in this environment — check the two lines still
-                hold at your real breakpoints. */}
-            <motion.h1
-              variants={item}
-              className="max-w-full t-hero leading-[1.1] text-cream-50"
-            >
+        <div className="grid w-full grid-cols-1 items-end gap-y-8 lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,0.65fr)] lg:gap-x-12">
+          <div className="flex flex-col items-start text-left">
+            <motion.h1 variants={item} className="max-w-2xl t-hero leading-[1.05] text-cream-50">
               {hero.headingLine1}
               <br />
               {hero.headingLine2}
             </motion.h1>
-            {/* Tight heading→paragraph gap, then a clearly bigger gap before
-                the buttons — groups heading+text as one cluster, buttons as
-                a distinct next step, at every breakpoint. */}
-            <motion.p
-              variants={item}
-              className="mt-3 max-w-md t-banner leading-relaxed text-cream-50/85"
-            >
+            <motion.p variants={item} className="mt-4 max-w-xl t-banner leading-relaxed text-cream-50/90">
               {hero.paragraph}
             </motion.p>
-            {/* Full width and stacked through sm/md (per design), but from
-                lg up the !-prefixed classes flip back to ButtonRow/Button's
-                own row/auto-width behavior so the two buttons sit side by
-                side on desktop instead of stacking at every breakpoint. */}
-            <motion.div variants={item} className="mt-6 w-full lg:mt-12">
-              <ButtonRow className="sm:!w-full sm:!flex-col lg:!w-auto lg:!flex-row lg:!gap-4">
-                <Button to="/gallery" variant="gold" uppercase className="sm:!w-full lg:!w-auto">
+            <motion.div variants={item} className="mt-6 w-full sm:w-auto">
+              <ButtonRow className="flex-wrap gap-3">
+                <Button
+                  to="/gallery"
+                  variant="gold"
+                  uppercase
+                  className="order-2 w-full sm:w-auto lg:order-1"
+                >
                   {hero.primaryButtonLabel}
                 </Button>
-                <Button onClick={openStartProject} variant="cream" uppercase className="sm:!w-full lg:!w-auto">
+                <Button
+                  onClick={openStartProject}
+                  variant="cream"
+                  uppercase
+                  className="order-1 w-full sm:w-auto lg:order-2"
+                >
                   {hero.secondaryButtonLabel}
                 </Button>
               </ButtonRow>
             </motion.div>
           </div>
+
+          <div className="grid grid-cols-2 gap-5 border-t border-cream-50/30 pt-5 lg:gap-8 lg:border-t-0 lg:pt-0">
+            {stats.items.map((stat) => (
+              <motion.div key={stat.label} variants={item}>
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  className="block t-stat text-cream-50"
+                />
+                <p className="mt-2 max-w-[12ch] t-tiny font-bold tracking-wide text-cream-50/85">
+                  {stat.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-        </motion.div>
+      </motion.div>
     </section>
   );
 }
