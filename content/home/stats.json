@@ -9,6 +9,11 @@
       "value": 75,
       "suffix": "+",
       "label": "SATISFIED CLIENTS"
+    },
+    {
+      "value": 100,
+      "suffix": "%",
+      "label": "CLIENT SATISFACTION"
     }
   ]
 }
