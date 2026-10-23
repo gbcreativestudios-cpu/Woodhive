@@ -10,7 +10,7 @@ export default function GalleryGrid() {
 
   return (
     <>
-      <div className="mx-auto flex max-w-[1040px] flex-wrap gap-2.5 px-6 pt-10">
+      <div className="mx-auto flex max-w-[1040px] flex-wrap gap-2 px-4 pt-10 sm:gap-2.5 sm:px-6">
         {CATEGORIES.map((cat) => {
           const isActive = active === cat;
           return (
@@ -20,7 +20,7 @@ export default function GalleryGrid() {
                 setActive(cat);
                 setLightboxIndex(null);
               }}
-              className={`rounded-lg border px-4 py-2.5 t-small font-semibold transition-all ${
+              className={`rounded-md border px-3 py-2 t-small font-semibold transition-all sm:px-4 sm:py-2.5 ${
                 isActive
                   ? "border-brown-900 bg-brown-900 text-cream-50"
                   : "border-sand-100 text-brown-900 hover:border-brown-900/40"
@@ -32,7 +32,7 @@ export default function GalleryGrid() {
         })}
       </div>
 
-      <div className="mx-auto grid max-w-[1040px] grid-cols-1 gap-5 px-6 pb-20 pt-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-[1040px] grid-cols-2 gap-2.5 px-4 pb-20 pt-6 sm:gap-5 sm:px-6 sm:pt-8 lg:grid-cols-3">
         <AnimatePresence>
           {filtered.map((w, i) => (
             <motion.figure
@@ -45,22 +45,16 @@ export default function GalleryGrid() {
             >
               <button
                 onClick={() => setLightboxIndex(i)}
-                className="block w-full cursor-zoom-in text-left"
+                className="block w-full cursor-zoom-in"
                 aria-label={`View ${w.title}`}
               >
                 <img
                   src={w.image}
                   alt={w.title}
                   loading="lazy"
-                  className="aspect-[5/4] w-full rounded-lg object-cover transition-transform duration-300 hover:scale-[1.01]"
+                  className="aspect-square w-full rounded-md object-cover transition-transform duration-300 hover:scale-[1.01]"
                 />
               </button>
-              <figcaption>
-                <h3 className="mt-3 t-mini text-brown-900">{w.title}</h3>
-                <p className="mt-1 t-micro font-bold uppercase tracking-wide text-orange-500">
-                  {w.category}
-                </p>
-              </figcaption>
             </motion.figure>
           ))}
         </AnimatePresence>
