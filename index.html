@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Wood Hive — Crafted in Wood. Defined by Elegance.</title>
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
     <meta name="description" content="The Wood Hive builds thoughtful woodwork — renovation and maintenance, custom wooden products, and event rentals — for spaces you live, work, and celebrate in." />
     <!-- Inter is self-hosted and preloaded so text never flashes in a different font. -->
     <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
@@ -13,6 +14,37 @@
     <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <div id="site-loader" aria-hidden="true">
+      <svg viewBox="0 0 40 40" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="6" width="4.5" height="28" rx="1" fill="#3D2209" />
+        <rect x="11.5" y="6" width="4.5" height="28" rx="1" fill="#3D2209" />
+        <rect class="loader-orange-mark" x="19" y="6" width="4.5" height="28" rx="1" fill="#D88B36" />
+        <rect x="26.5" y="6" width="4.5" height="28" rx="1" fill="#3D2209" />
+        <rect x="34" y="6" width="2.5" height="28" rx="1" fill="#3D2209" />
+      </svg>
+    </div>
+    <style>
+      #site-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 2147483647;
+        display: grid;
+        place-items: center;
+        background: #f6f1e9;
+        opacity: 1;
+        transition: opacity 220ms ease;
+      }
+      #site-loader.is-loaded { opacity: 0; pointer-events: none; }
+      .loader-orange-mark { animation: loader-breathe 1.35s ease-in-out infinite; }
+      @keyframes loader-breathe {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.22; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .loader-orange-mark { animation: none; }
+        #site-loader { transition: none; }
+      }
+    </style>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <script>
