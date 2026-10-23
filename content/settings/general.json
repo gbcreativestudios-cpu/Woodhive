@@ -1,6 +1,7 @@
 {
   "leaveReviewButtonColor": "#d88b36",
   "faqBarColor": "#0d0d0d",
+  "faviconImage": "/images/uploads/artboard-3.webp",
   "startConversationButtonColor": "#0d0d0d",
   "navLogoImage": "/images/uploads/artboard-13.webp",
   "phone": "+1 (555) 438-4483",
@@ -13,6 +14,5 @@
   "footerBackgroundColor": "#0d0d0d",
   "email": "studio@thewoodhive.com",
   "instagramUrl": "https://instagram.com",
-  "faviconImage": "/images/favicon.svg",
   "loaderLogoImage": ""
 }
