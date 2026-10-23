@@ -20,6 +20,12 @@
   --color-sand-100: #E0E0E0;
   --color-ink-900: #241408;
 
+  --radius-lg: 0.375rem;
+  --radius-xl: 0.375rem;
+  --radius-2xl: 0.375rem;
+  --radius-3xl: 0.375rem;
+  --radius-4xl: 0.375rem;
+
   --ease-hive: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
