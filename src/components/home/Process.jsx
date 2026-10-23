@@ -21,7 +21,7 @@ function ProcessStep({ step, index, total }) {
   );
 
   return (
-    <Reveal key={step.title} className={`flex w-full items-center gap-3 sm:gap-5 ${index % 2 === 0 ? "justify-end" : "justify-start"}`}>
+    <Reveal key={step.title} className={`flex w-full items-center gap-3 sm:w-[88%] sm:gap-5 ${index % 2 === 0 ? "justify-end" : "justify-start"}`}>
       {index % 2 === 0 ? <>{numberBlock}{card}</> : <>{card}{numberBlock}</>}
     </Reveal>
   );
