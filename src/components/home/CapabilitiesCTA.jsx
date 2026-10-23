@@ -3,6 +3,7 @@ import Button from "../ui/Button";
 import { useInquiryModal } from "../../context/InquiryModalContext";
 import content from "../../../content/home/capabilities-cta.json";
 import SectionLabel from "../ui/SectionLabel";
+import settings from "../../../content/settings/general.json";
 
 export default function CapabilitiesCTA() {
   const { openStartProject } = useInquiryModal();
@@ -18,7 +19,7 @@ export default function CapabilitiesCTA() {
           {content.paragraph}
         </p>
         <div className="mt-6 flex justify-center">
-          <Button onClick={openStartProject} variant="brown">
+          <Button onClick={openStartProject} variant="brown" color={settings.tellUsWhatYouNeedButtonColor}>
             {content.buttonLabel}
           </Button>
         </div>

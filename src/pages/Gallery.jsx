@@ -12,6 +12,8 @@ export default function Gallery() {
         eyebrow={getLabel("galleryHero", hero.eyebrow)}
         title={hero.title}
         image={hero.image}
+        overlayColor={hero.overlayColor}
+        overlayOpacity={hero.overlayOpacity}
         minH="min-h-[46vh]"
       />
       <GalleryGrid />

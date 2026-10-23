@@ -7,6 +7,7 @@ import ReviewForm from "./ReviewForm";
 import { REVIEWS } from "../../data/reviews";
 import section from "../../../content/reviews/section.json";
 import SectionLabel from "../ui/SectionLabel";
+import settings from "../../../content/settings/general.json";
 
 function useMediaQuery(query) {
   return useSyncExternalStore(
@@ -85,7 +86,7 @@ export default function Reviews() {
       )}
 
       <div className="mt-10 flex justify-center">
-        <Button onClick={() => setFormOpen(true)} variant="brown">
+        <Button onClick={() => setFormOpen(true)} variant="brown" color={settings.leaveReviewButtonColor}>
           {section.leaveReviewLabel}
         </Button>
       </div>

@@ -28,6 +28,15 @@ function pct(value, fallback, min = 0, max = 100) {
   return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : fallback;
 }
 
+const PAGE_OVERLAY_DEFAULTS = { color: "#3D2209", opacity: 62 };
+
+/** A single solid overlay for the non-home page headers, editable in Decap. */
+export function buildSolidOverlay(color, opacity) {
+  const rgb = hexToRgb(color) || hexToRgb(PAGE_OVERLAY_DEFAULTS.color);
+  const alpha = pct(opacity, PAGE_OVERLAY_DEFAULTS.opacity) / 100;
+  return `rgba(${rgb}, ${alpha})`;
+}
+
 export function buildHeroOverlay(hero = {}) {
   const d = HERO_OVERLAY_DEFAULTS;
   const rgb = hexToRgb(hero.overlayColor) || hexToRgb(d.color);

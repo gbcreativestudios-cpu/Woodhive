@@ -1,5 +1,7 @@
 {
   "eyebrow": "FAQ",
   "title": "Answers before we begin",
-  "image": "https://images.unsplash.com/photo-1641893946457-015809f3821d?auto=format&fit=crop&w=1600&q=85"
+  "image": "https://images.unsplash.com/photo-1641893946457-015809f3821d?auto=format&fit=crop&w=1600&q=85",
+  "overlayColor": "#3D2209",
+  "overlayOpacity": 62
 }
