@@ -1,68 +1,43 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Reveal from "../ui/Reveal";
 import process from "../../../content/home/process.json";
 import SectionLabel from "../ui/SectionLabel";
 
-/**
- * Each card sticks at an incrementing offset so the cards pile into a stack
- * as you scroll. Cards underneath scale down and dim to build depth.
- */
-function StackCard({ step, index, total }) {
-  const cardRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start 0.32", "end 0.18"],
-  });
+function ProcessStep({ step, index, total }) {
+  const number = String(index + 1).padStart(2, "0");
+  const numberBlock = (
+    <div className="w-[72px] shrink-0 text-center sm:w-[92px]">
+      <span className="font-display text-3xl leading-none text-ink-900 sm:text-4xl">{number}</span>
+      <span className="mt-1 block text-[9px] font-medium uppercase tracking-wide text-ink-900/75 sm:text-[10px]">
+        Step {index + 1} of {total}
+      </span>
+    </div>
+  );
 
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.92]);
-  // Dimming is done with an opaque scrim, not card opacity — a translucent
-  // card would let the text of the card beneath it bleed through the stack.
-  const scrim = useTransform(scrollYProgress, [0, 0.6, 1], [0, 0.25, 0.55]);
-
-  const topOffset = 110 + index * 16;
+  const card = (
+    <div className="min-h-[124px] flex-1 bg-ink-900 px-5 py-5 text-cream-50 sm:min-h-[136px] sm:px-8 sm:py-6">
+      <h3 className="t-step leading-tight text-orange-500">{step.title}</h3>
+      <p className="mt-1.5 max-w-2xl t-body leading-snug text-cream-50/90">{step.description}</p>
+    </div>
+  );
 
   return (
-    <div ref={cardRef} className="sticky" style={{ top: topOffset, zIndex: index + 1 }}>
-      <motion.div
-        style={{ scale, transformOrigin: "center top" }}
-        className="relative mb-5 overflow-hidden rounded-lg bg-cream-50 px-7 py-8 shadow-[0_16px_40px_rgba(36,20,8,0.28)] sm:px-9 sm:py-10"
-      >
-        <div className="flex items-baseline gap-4">
-          <span className="font-display text-2xl text-orange-500">{String(index + 1).padStart(2, "0")}</span>
-          <span className="t-micro font-semibold tracking-wide text-brown-900/40">
-            STEP {index + 1} OF {total}
-          </span>
-        </div>
-        <h3 className="mt-3 t-step text-brown-900">{step.title}</h3>
-        <p className="mt-3 max-w-xl t-body leading-relaxed text-brown-900/60">{step.description}</p>
-
-        {/* Scrim darkens cards as they recede into the stack */}
-        <motion.div
-          style={{ opacity: scrim }}
-          className="pointer-events-none absolute inset-0 bg-brown-950"
-          aria-hidden="true"
-        />
-      </motion.div>
-    </div>
+    <Reveal key={step.title} className={`flex w-full items-center gap-3 sm:gap-5 ${index % 2 === 0 ? "justify-end" : "justify-start"}`}>
+      {index % 2 === 0 ? <>{numberBlock}{card}</> : <>{card}{numberBlock}</>}
+    </Reveal>
   );
 }
 
 export default function Process() {
   return (
-    <section className="bg-brown-950 py-16 lg:py-24">
-      <div className="mx-auto max-w-[900px] px-6">
-        <Reveal className="text-center">
-          <SectionLabel id="homeProcess" fallback={process.eyebrow} className="text-gold-400" />
-          <h2 className="mt-2.5 first:mt-0 t-process text-cream-50">
-            {process.heading}
-          </h2>
+    <section className="bg-cream-50 py-16 lg:py-24">
+      <div className="mx-auto max-w-[1040px] px-5 sm:px-6">
+        <Reveal className="mb-10 text-center sm:mb-14">
+          <SectionLabel id="homeProcess" fallback={process.eyebrow} />
+          <h2 className="mt-2.5 first:mt-0 t-process text-brown-900">{process.heading}</h2>
         </Reveal>
-
-        {/* Extra bottom padding gives the last card room to settle in the stack */}
-        <div className="mt-12 pb-[30vh]">
+        <div className="space-y-5 sm:space-y-6">
           {process.steps.map((step, i) => (
-            <StackCard key={step.title} step={step} index={i} total={process.steps.length} />
+            <ProcessStep key={step.title} step={step} index={i} total={process.steps.length} />
           ))}
         </div>
       </div>
