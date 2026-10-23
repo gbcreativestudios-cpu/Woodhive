@@ -13,5 +13,6 @@
   "footerBackgroundColor": "#0d0d0d",
   "email": "studio@thewoodhive.com",
   "instagramUrl": "https://instagram.com",
-  "faviconImage": "/images/favicon.svg"
+  "faviconImage": "/images/favicon.svg",
+  "loaderLogoImage": ""
 }
