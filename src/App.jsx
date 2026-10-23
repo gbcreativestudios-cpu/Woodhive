@@ -53,9 +53,25 @@ export default function App() {
 
     const loader = document.getElementById("site-loader");
     if (!loader) return undefined;
-    loader.classList.add("is-loaded");
-    const timeout = window.setTimeout(() => loader.remove(), 240);
-    return () => window.clearTimeout(timeout);
+
+    let fadeTimeout;
+    let removeTimeout;
+    let cancelled = false;
+    Promise.resolve(window.woodhiveLoaderReady)
+      .catch(() => {})
+      .finally(() => {
+        if (cancelled) return;
+        fadeTimeout = window.setTimeout(() => {
+          loader.classList.add("is-loaded");
+          removeTimeout = window.setTimeout(() => loader.remove(), 240);
+        }, 120);
+      });
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(fadeTimeout);
+      window.clearTimeout(removeTimeout);
+    };
   }, []);
 
   return (
