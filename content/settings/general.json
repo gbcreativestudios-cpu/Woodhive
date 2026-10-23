@@ -1,16 +1,16 @@
 {
+  "leaveReviewButtonColor": "#d88b36",
+  "faqBarColor": "#0d0d0d",
+  "startConversationButtonColor": "#0d0d0d",
   "navLogoImage": "/images/uploads/artboard-13.webp",
   "phone": "+1 (555) 438-4483",
+  "tellUsWhatYouNeedButtonColor": "#d88b36",
   "footerTagline": "Structural Intelligence & Emotional Craftsmanship.",
   "address": "140 Timberline Way, Suite 400",
   "tiktokUrl": "https://tiktok.com",
   "footerLogoImage": "/images/uploads/artboard-3.webp",
   "footerCopyrightName": "The Wood Hive",
+  "footerBackgroundColor": "#0d0d0d",
   "email": "studio@thewoodhive.com",
-  "instagramUrl": "https://instagram.com",
-  "faqBarColor": "#592D10",
-  "startConversationButtonColor": "#592D10",
-  "tellUsWhatYouNeedButtonColor": "#592D10",
-  "leaveReviewButtonColor": "#592D10",
-  "footerBackgroundColor": "#3D2209"
+  "instagramUrl": "https://instagram.com"
 }
