@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import Logo from "../ui/Logo";
@@ -42,7 +43,7 @@ export default function Navbar() {
     setServicesOpen(false);
   };
 
-  return (
+  return createPortal((
     <motion.header
       initial={{ y: -24, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -215,5 +216,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </motion.header>
-  );
+  ), document.body);
 }
