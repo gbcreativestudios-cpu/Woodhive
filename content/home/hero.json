@@ -1,18 +1,18 @@
 {
   "primaryButtonLabel": "EXPLORE OUR WORK",
-  "overlayTopOpacity": 20,
-  "overlayMiddleOpacity": 50,
-  "backgroundImage": "https://images.pexels.com/photos/8817828/pexels-photo-8817828.jpeg?auto=compress&cs=tinysrgb&w=2400",
+  "overlayTopOpacity": 24,
+  "overlayMiddleOpacity": 48,
+  "backgroundImage": "https://images.pexels.com/photos/6790933/pexels-photo-6790933.jpeg?auto=compress&cs=tinysrgb&w=2400",
   "secondaryButtonLabel": "START A PROJECT",
-  "paragraph": "We create thoughtful woodwork that bring warmth, character, and a sense of finish to the spaces you live, work, gather, and celebrate in.",
-  "overlayMiddlePosition": 35,
-  "overlayBottomOpacity": 100,
+  "paragraph": "Thoughtful woodwork, interior spaces and renovations made around your needs.",
+  "overlayMiddlePosition": 45,
+  "overlayBottomOpacity": 68,
   "overlayColor": "#3D2209",
   "carouselImages": [
     "/images/uploads/luxury_interior_with_wood_panels_20260911103707.jpeg",
     "/images/uploads/luxury_interior_with_wood_panels_20260911212822.jpeg",
     "/images/uploads/wooden_mobile_retail_cart_20260911212828.jpeg"
   ],
-  "headingLine1": "Crafted in Wood.",
-  "headingLine2": "Defined by Elegance."
+  "headingLine1": "Crafted for the",
+  "headingLine2": "way you live."
 }
