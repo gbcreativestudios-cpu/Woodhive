@@ -14,5 +14,6 @@
   "footerBackgroundColor": "#0d0d0d",
   "email": "studio@thewoodhive.com",
   "instagramUrl": "https://instagram.com",
-  "loaderLogoImage": "/images/uploads/artboard-2.webp"
+  "loaderLogoImage": "/images/uploads/artboard-2.webp",
+  "loaderBackgroundColor": "#331603"
 }
