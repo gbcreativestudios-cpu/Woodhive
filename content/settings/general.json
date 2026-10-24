@@ -1,4 +1,5 @@
 {
+  "loaderBackgroundColor": "#090401",
   "leaveReviewButtonColor": "#d88b36",
   "faqBarColor": "#0d0d0d",
   "faviconImage": "/images/uploads/artboard-3.webp",
@@ -14,6 +15,5 @@
   "footerBackgroundColor": "#0d0d0d",
   "email": "studio@thewoodhive.com",
   "instagramUrl": "https://instagram.com",
-  "loaderLogoImage": "/images/uploads/artboard-2.webp",
-  "loaderBackgroundColor": "#331603"
+  "loaderLogoImage": "/images/uploads/artboard-3.webp"
 }
