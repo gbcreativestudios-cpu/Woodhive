@@ -8,7 +8,9 @@ import settings from "../content/settings/general.json";
 applyTypography();
 
 async function prepareLoaderLogo() {
+  const loader = document.getElementById("site-loader");
   const mark = document.getElementById("site-loader-mark");
+  if (loader) loader.style.backgroundColor = settings.loaderBackgroundColor || "#331603";
   const logoPath = settings.loaderLogoImage || settings.footerLogoImage;
   if (!mark || !logoPath) return;
 
@@ -59,7 +61,7 @@ async function prepareLoaderLogo() {
     svg.setAttribute("aria-hidden", "true");
     mark.replaceChildren(document.importNode(svg, true));
   } catch {
-    // Keep the built-in favicon mark visible if an uploaded logo cannot load.
+    // Keep the loader empty if its configured logo cannot be loaded.
   }
 }
 
